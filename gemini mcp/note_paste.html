@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>note貼り付け用</title>
+<style>
+body{font-family:system-ui,"Yu Gothic",sans-serif;max-width:760px;margin:24px auto;padding:0 16px;line-height:1.8;color:#222}
+.bar{position:sticky;top:0;background:#fff;padding:12px 0;border-bottom:1px solid #ddd;margin-bottom:16px}
+button{font-size:16px;padding:10px 20px;border:0;border-radius:6px;background:#2cb696;color:#fff;cursor:pointer}
+#msg{margin-left:12px;color:#2cb696}
+pre{background:#f5f5f5;padding:12px;overflow:auto}
+blockquote{border-left:4px solid #ccc;margin-left:0;padding-left:12px;color:#555}
+</style></head><body>
+<div class="bar"><button id="copy">本文をコピー</button><span id="msg"></span>
+<p style="font-size:13px;color:#666;margin:8px 0 0">ボタンを押したら、noteのエディタの本文欄にそのまま貼り付けてください。タイトルとタグは別に入力します。</p></div>
+<div id="article">
+<p>Claude Code で開発していると、すぐにトークンの制限がかかります。有料プランに入っているのに、作業の途中で止まるのはつらいところです。</p>
+<p>そこで、ソースを書く作業を Gemini に任せる構成を試しました。この記事では、MCP サーバー「gemini-mcp-tool」を Claude Code に追加する手順と、Windows でハマった点をまとめます。Claude Code を使っていて、制限に困っている人向けです。</p>
+<h2>🤔 なぜ Gemini に書かせようと思ったか</h2>
+<p>私は Claude と Gemini の両方の有料プランに入っています。使い分けは次の通りです。</p>
+<ul><li>Claude：プログラム開発</li><li>Gemini：調べ物や文章など、一般的な用途</li></ul>
+<p>困っているのは Claude 側です。開発では、コードの読み込み、修正、実行、エラーの確認と、やり取りが何往復も続きます。そのぶんトークンの消費が早く、作業の途中で制限にかかります。</p>
+<p>一方の Gemini は、一般的な用途にしか使っていないので、枠がほとんど余っています。それならソースを書く部分は Gemini に任せて、Claude は指示と確認に回せばいいのではないか。これが今回試した理由です。</p>
+<p>Claude Code から Gemini を呼べるようにするのが、MCP サーバーの gemini-mcp-tool です。</p>
+<h2>🛠 gemini-mcp-tool とは？</h2>
+<p>npm で配布されている MCP サーバーで、インストール作業はほぼ要りません。</p>
+<p>提供されるツールは4つです。</p>
+<ul><li><code>ask-gemini</code>：ファイルや質問を Gemini に投げる。コードを書かせるのはこれ</li><li><code>sandbox-test</code>：コードをサンドボックスで実行して確かめる</li><li><code>Ping</code>：接続確認</li><li><code>Help</code>：CLI 情報の表示</li></ul>
+<p>ファイルは <code>@src/main.js</code> のように <code>@</code> で指定して渡します。ディレクトリ全体なら <code>@.</code> です。</p>
+<blockquote><p>2026年10月時点の GitHub の README に基づきます。Gemini CLI は2026年6月18日に提供終了になっていて、バックエンドは Antigravity CLI（<code>agy</code>）に切り替わっています。ネットの古い記事は Gemini CLI 前提のものが多いので注意してください。</p></blockquote>
+<h2>🚀 導入手順</h2>
+<h3>環境</h3>
+<ul><li>OS：Windows 11</li><li>Node.js：v24.18.0 / npm 11.16.0</li><li>Claude Code：2.1.251</li></ul>
+<h3>1. MCP を追加する</h3>
+<p>次のコマンドで、ユーザー全体（<code>-s user</code>）の設定に追加します。</p>
+<pre><code>claude mcp add -s user --transport stdio gemini -- npx -y gemini-mcp-tool</code></pre>
+<p><code>-s user</code> を付けると、どのプロジェクトでも使えます。特定のプロジェクトだけで使うなら <code>-s project</code> にします。</p>
+<h3>2. 追加できたか確認する</h3>
+<pre><code>claude mcp list</code></pre>
+<p>次のように表示されれば成功です。</p>
+<pre><code>gemini: npx -y gemini-mcp-tool - √ Connected</code></pre>
+<h3>3. バックエンドの CLI を入れてサインインする</h3>
+<p>README によると、Antigravity CLI（<code>agy</code>）をインストールして、一度サインインしておく必要があります。<code>Connected</code> と出ても、これが無いと Gemini は動きません。MCP サーバー自体は起動できているだけだからです。</p>
+<p>Windows のインストールは、公式ドキュメントにある PowerShell の1行です。</p>
+<pre><code>irm https://antigravity.google/cli/install.ps1 | iex</code></pre>
+<p>途中で <code>ERROR: logging before google.Init</code> と赤字が出ますが、中身は Info ログで失敗ではありません。最後に <code>binary placed successfully</code> と出れば成功です。</p>
+<p>ただし、インストール直後は開いているターミナルに PATH が反映されず、<code>agy</code> が見つからないと言われます。ターミナルを開き直せば通ります。Claude のデスクトップアプリも、再起動するまで古い PATH のままでした。</p>
+<p>その後、新しいターミナルで <code>agy</code> を起動し、Google アカウントでサインインします。私の環境では Google AI Pro のアカウントで利用でき、初期モデルは Gemini 3.8 Flash (High) でした。</p>
+<h2>⚠️ ハマったところ</h2>
+<h3>PowerShell だと <code>-y</code> が怒られる</h3>
+<p>PowerShell でそのまま実行したら、こうなりました。</p>
+<pre><code>error: unknown option '-y'</code></pre>
+<p>原因は <code>--</code> が PowerShell に解釈されて、claude コマンドに届いていなかったことです（Windows PowerShell 5.1 で確認）。</p>
+<p><code>--</code> は「ここから先は起動するコマンドの引数」という区切りです。これが消えると、<code>-y</code> が claude mcp add のオプション扱いになります。</p>
+<p>対処は cmd 経由で実行することでした。</p>
+<pre><code>cmd /c "claude mcp add -s user --transport stdio gemini -- npx -y gemini-mcp-tool"</code></pre>
+<p>Git Bash で実行する方法でも通るはずですが、こちらは試していません（未検証）。</p>
+<h3>Connected でも使えるとは限らない</h3>
+<p><code>claude mcp list</code> の <code>Connected</code> は、MCP サーバーのプロセスが起動して応答したという意味です。Gemini 側の認証まで見ているわけではありません。最初に <code>Ping</code> で疎通を、次に小さな <code>ask-gemini</code> で実際に返事が来るかを確認するのが安全です。</p>
+<h2>💻 Gemini にプログラムを書かせる</h2>
+<p>まず <code>Ping</code> を呼びました。これはサーバーの応答確認なので、返ってきても Gemini に届いたとは限りません。次に <code>ask-gemini</code> で、小さな関数を書かせました。</p>
+<pre><code>Pythonで、CSVファイルのパスを受け取り、各列の平均値を辞書で返す関数 column_means(path) を書いてください。標準ライブラリのみ使用、数値でない列は無視、コードのみ出力してください。</code></pre>
+<p>返ってきたのは、<code>csv.DictReader</code> で読み込み、列ごとに <code>float</code> へ変換できるかを見て、変換できない値が1つでもある列を除外するコードでした。</p>
+<pre><code>import csv
+
+def column_means(path):
+    with open(path, mode='r', encoding='utf-8', newline='') as f:
+        reader = csv.DictReader(f)
+        if not reader.fieldnames:
+            return {}
+
+        col_values = {field: [] for field in reader.fieldnames}
+        for row in reader:
+            for k in reader.fieldnames:
+                col_values[k].append(row.get(k))
+
+    result = {}
+    for col, vals in col_values.items():
+        nums = []
+        is_numeric = True
+        for v in vals:
+            if v is None or v.strip() == '':
+                continue
+            try:
+                nums.append(float(v))
+            except ValueError:
+                is_numeric = False
+                break
+        if is_numeric and nums:
+            result[col] = sum(nums) / len(nums)
+
+    return result</code></pre>
+<p>Claude が次のテスト用 CSV で実行して確認しました。</p>
+<pre><code>name,price,qty,note
+A,100,2,x
+B,200,,y
+C,300,4,1</code></pre>
+<p>結果は <code>{'price': 200.0, 'qty': 3.0}</code> でした。文字だけの <code>name</code> と、数値と文字が混ざった <code>note</code> は除外され、<code>qty</code> の空欄は平均の計算から外れています。意図どおりの動きです。</p>
+<p>なお、ツールの説明には既定モデルが <code>gemini-2.5-pro</code> と書かれていますが、バックエンドが <code>agy</code> に切り替わっているため、実際にどのモデルが答えたかは確認できていません。</p>
+<p>役割分担は、Gemini が実装の下書きを書き、Claude が実行して確かめる形です。</p>
+<p>ただし、今回は小さな関数1つだけです。Claude のトークン消費がどれだけ減ったかは、まだ測っていないので言えません。</p>
+<h2>📝 まとめ</h2>
+<ul><li>追加は1コマンド。ただし Windows の PowerShell では <code>--</code> が消えるので cmd 経由にする</li><li><code>Connected</code> はサーバーが起動しただけ。Gemini 側のサインインが別途必要</li><li>古い記事の Gemini CLI 前提の手順は、いまはそのまま通らない可能性が高い</li><li><code>agy</code> を入れてサインインし、アプリを再起動すれば、<code>ask-gemini</code> で実際にコードが返ってきた</li></ul>
+<p>👉 次回は、既存のプロジェクトを <code>@</code> で渡して、もっと大きな実装を任せます。Claude のトークン消費が実際に減るかも見てみます。</p>
+<hr>
+<p>※動作確認は Windows 11 / Google AI Pro アカウントでの結果です。無料アカウントで使えるかは確認していません。</p>
+</div>
+<script>
+document.getElementById('copy').onclick=function(){
+  var r=document.createRange();r.selectNodeContents(document.getElementById('article'));
+  var s=getSelection();s.removeAllRanges();s.addRange(r);
+  var ok=document.execCommand('copy');s.removeAllRanges();
+  document.getElementById('msg').textContent=ok?'コピーしました':'コピー失敗：本文を選択してCtrl+Cしてください';
+};
+</script></body></html>

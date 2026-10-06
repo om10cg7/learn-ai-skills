@@ -5,7 +5,7 @@
 ## 設定
 
 - 画像フォルダ: `~/.gemini/antigravity/brain/<会話ID>/`
-  - Windows の例: `C:\Users\om10c\.gemini\antigravity\brain\6234b420-fcbd-4faa-a976-53a4d565a315\`
+  - Windows の例: `C:\Users\ユーザー名\.gemini\antigravity\brain\<ID>\`
   - ファイル名の例: `suibokuga_notebooklm_mcp_banner_1791080735072.jpg`
   - 末尾の数字は作成時刻（ミリ秒のUNIX時刻）
 - 「バーナー」プロジェクトの画像は、上の会話IDのフォルダにまとまっている。

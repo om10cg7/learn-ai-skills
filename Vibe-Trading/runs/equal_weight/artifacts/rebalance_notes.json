@@ -1,0 +1,13 @@
+{
+  "rebalances": [],
+  "summary": {
+    "target_change_count": 0,
+    "turnover_total": 0.0,
+    "turnover_mean": 0.0,
+    "turnover_max": 0.0,
+    "largest_rebalance_date": null,
+    "rebalance_executed_bars": 81,
+    "rebalance_executed_fills": 1017,
+    "rebalance_realized_turnover": 1.5905127610490426
+  }
+}

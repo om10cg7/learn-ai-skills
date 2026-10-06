@@ -1,0 +1,21 @@
+{
+  "source": "yfinance",
+  "codes": ["7203.T","6758.T","9984.T","8306.T","6861.T","9432.T","8035.T","6098.T","4063.T","8058.T","8031.T","9983.T","7974.T","6501.T","7267.T","8316.T","4502.T","2914.T","6367.T","6902.T","9433.T","8001.T","8766.T","6594.T","7741.T","4519.T","6954.T","7751.T","5108.T","9434.T"],
+  "start_date": "2018-06-01",
+  "end_date": "2026-10-01",
+  "evaluation_start_date": "2020-01-01",
+  "interval": "1D",
+  "initial_cash": 1000000,
+  "commission": 0.001,
+  "extra_fields": null,
+  "fundamental_fields": null,
+  "optimizer": null,
+  "engine": "daily",
+  "position_adjustment": "rebalance",
+  "rebalance_mask": "MS",
+  "rebalance_tolerance": 0.05,
+  "validation": {
+    "bootstrap": {"n_bootstrap": 1000, "confidence": 0.95},
+    "walk_forward": {"n_windows": 5}
+  }
+}

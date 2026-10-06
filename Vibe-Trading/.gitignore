@@ -1,0 +1,6 @@
+.venv/
+.mcp.json
+runs/*/artifacts/ohlcv_*.csv
+body.html
+paste.js
+note貼り付け用.html

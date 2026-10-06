@@ -1,0 +1,8 @@
+# 個人情報を含む出力物はコミットしない
+mails/
+*.eml
+all.md
+clean.md
+*.log
+.env
+.msal_cache.bin

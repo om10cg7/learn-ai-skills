@@ -79,6 +79,7 @@ learn-ui の既存ノートと照合済み。重複が多いものは末尾に�
 
 16. **Graphify + Obsidian + Claude Code**（@divyannshisharma）
     - 文書群を知見・つながり・話題グループへ地図化（実験：171ページ→591知見／685接続／67グループ）し、`graphify --obsidian` で Obsidian ノート化して「第二の脳」にする
+    - 追記（@gut1n版、2026-11-02受信・同テーマの別投稿）：コマンドは `/graphify . --obsidian`。出力は HTMLマップ／JSON／Vaultフォルダ（知見ごとに1ノート、各ノートに出典と接続を明記）。Vaultは分離・マージ・手動コピーの3択。地図への直接質問は `/graphify query ...` でキーワード検索ではなく関係をたどる
 
 17. **Claude Code 神機能 7選**（@tatsu.insta_ai）
     - カレンダー連携、リモートコントロール、Claude in Chrome、Meta API連携、UTAGE連携、Codexプラグイン連携、Claude Skills

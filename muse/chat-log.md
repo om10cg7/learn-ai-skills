@@ -34,3 +34,4 @@
 - 本人依頼「ここで要約したスキルの要約を一覧にしてまとめて」を受け、このチャット（サイドチャット）で要約した Skill 系投稿20件を整理し、`muse/skills-summary.md` を新規作成した（デザイン系2件、動画・アニメーション系6件、運用・自動化・知識系11件、ワークフロー1件＋常連9種と番外3件）。learn-ui 既存ノートとの照合では、デザイン Skill 3選と動画 Skill まとめの2テーマに既存ノートあり。
 - @juanbertorello.ia の JARVIS OS 2.0（Claude Code＋Obsidian＋ローカル音声＋Skills＋2パネル、Step 5で Mailerfind の MCP 接続による見込み客探し）を要約し、一覧に21件目として追加した。
 - @gut1n の Graphify＋Obsidian＋Claude Code 投稿を受信。既要約（@divyannshisharma、16番）と同テーマのため新規にはせず、一覧16番へ追記した（`/graphify . --obsidian` の出力3種、Vault統合3択、`/graphify query`）。
+- @sanskaar.ai の UIワークフロー向け Claude MCP ツール7選（Figma／shadcn／Playwright／Chrome DevTools／21st.dev Magic／Penpot／Context7）を要約し、一覧に22件目として追加した。

@@ -98,6 +98,10 @@ learn-ui の既存ノートと照合済み。重複が多いものは末尾に�
     - 19番の JARVIS 構築とほぼ同型の5ピース構成：Engine＝Claude Code、Memory＝Obsidian、Voice＝ローカル音声（Whisper／Kokoro、音声は端末外に出ない）、Brain＝Skills（最大10個をボタン化）、Face＝2つのパネル
     - 新要素は Step 5：**Mailerfind** を MCP コネクタで接続し、見込み客探し。「コルドバの不動産会社を探して」で企業の公開メール・Web・電話を Vault に保存。送信は承認なしに行わない、個人の調査用ではない、無料トライアルあり
 
+22. **UIワークフロー向け Claude MCP ツール 7選**（@sanskaar.ai、2026-11-02追加）
+    - Figma MCP（デザイン→コード、推測でなく実デザインを読む）、shadcn MCP（UIコンポーネント検索・導入）、Playwright MCP（実ページを開いて操作・撮影・修正）、Chrome DevTools MCP（コンソール／ネットワーク／CSS／Lighthouseでデバッグ）、21st.dev Magic MCP（プロンプトから React コンポーネント生成）、Penpot MCP（オープンソース版デザイン→コード）、Context7 MCP（現行バージョンのドキュメントを引く）
+    - MCP自体は「AI版 USB-C」という例えで紹介。なしだと Claude が推測し、ありだと Figma・実ページ・最新ドキュメントを読める、という対比
+
 ## 常連（複数投稿に繰り返し登場）
 
 frontend-design、Taste Skill、Impeccable、UI/UX Pro Max、gstack、HyperFrames、Remotion、Playwright、graphify

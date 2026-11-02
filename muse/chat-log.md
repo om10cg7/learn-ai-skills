@@ -36,3 +36,4 @@
 - @gut1n の Graphify＋Obsidian＋Claude Code 投稿を受信。既要約（@divyannshisharma、16番）と同テーマのため新規にはせず、一覧16番へ追記した（`/graphify . --obsidian` の出力3種、Vault統合3択、`/graphify query`）。
 - @sanskaar.ai の UIワークフロー向け Claude MCP ツール7選（Figma／shadcn／Playwright／Chrome DevTools／21st.dev Magic／Penpot／Context7）を要約し、一覧に22件目として追加した。
 - @maruta_masayuki の「Claude Codeでアプリを作るなら最初に入れる5つ」（Agent Skills／Context7／Graphify／21st.dev Magic MCP／Strix）を要約し、一覧に23件目として追加した。新規は Agent Skills と Strix、他3つは既出と明記。
+- @stripehq の広告投稿（ノーコードでオンライン販売開始）を受信。Skill ではないため当初は一覧に入れなかったが、本人が「覚えておいて」と指示したため、一覧の番外に記録した。

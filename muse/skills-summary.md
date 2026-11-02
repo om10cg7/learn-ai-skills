@@ -114,3 +114,4 @@ frontend-design、Taste Skill、Impeccable、UI/UX Pro Max、gstack、HyperFrame
 - デザインリソース12選（@codewithnishant）：godly のみ learn-ui 既存ノートと重複、他11件は新規
 - Lightroom マスキング講座（@mikita.yo）
 - Arcads で作った LinkedIn Premium 広告デモ（@riki.bosso）
+- Stripe 公式の広告投稿（@stripehq、2026-11-02）：「わずか数クリックでオンライン販売を簡単に開始できます。コーディングは不要です。」というノーコード販売の宣伝、単体画像投稿。Skill ではないが、本人の指示（「覚えておいて」）で記録

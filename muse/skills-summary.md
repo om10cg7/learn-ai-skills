@@ -102,6 +102,9 @@ learn-ui の既存ノートと照合済み。重複が多いものは末尾に�
     - Figma MCP（デザイン→コード、推測でなく実デザインを読む）、shadcn MCP（UIコンポーネント検索・導入）、Playwright MCP（実ページを開いて操作・撮影・修正）、Chrome DevTools MCP（コンソール／ネットワーク／CSS／Lighthouseでデバッグ）、21st.dev Magic MCP（プロンプトから React コンポーネント生成）、Penpot MCP（オープンソース版デザイン→コード）、Context7 MCP（現行バージョンのドキュメントを引く）
     - MCP自体は「AI版 USB-C」という例えで紹介。なしだと Claude が推測し、ありだと Figma・実ページ・最新ドキュメントを読める、という対比
 
+23. **Claude Codeでアプリを作るなら最初に入れる5つ**（@maruta_masayuki、2026-11-02追加）
+    - Agent Skills（Google Chromeエンジニア Addy Osmani の開発ワークフロー／エンジニアリング手法を読み込ませる）、Context7（最新版ドキュメントとサンプル、月1,000回まで無料と紹介 ※22番と重複）、Graphify（ファイル同士の接続マップ、今回は知識ではなくコード探索用途 ※常連）、21st.dev Magic MCP（欲しいUI部品を言葉で探す ※22番と重複）、Strix（AIハッカーが自分のアプリを攻撃して侵入可否を確認し、直し方まで教える脆弱性診断）
+
 ## 常連（複数投稿に繰り返し登場）
 
 frontend-design、Taste Skill、Impeccable、UI/UX Pro Max、gstack、HyperFrames、Remotion、Playwright、graphify

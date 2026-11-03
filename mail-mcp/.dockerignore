@@ -1,0 +1,8 @@
+.env
+.git
+.venv
+config/accounts.yaml
+tests
+__pycache__
+.pytest_cache
+tokens

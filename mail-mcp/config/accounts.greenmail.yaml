@@ -1,0 +1,14 @@
+# ローカルの GreenMail（compose.yaml）に接続するテスト用設定
+default_days: 0
+default_unread_only: false
+accounts:
+  - name: test
+    display_name: テスト太郎
+    email: test@localhost
+    imap_host: greenmail      # Windows の Docker 外から使うなら host.docker.internal / localhost
+    imap_port: 3993
+    username: test
+    password_env: GREENMAIL_PASSWORD
+    signature: |
+      テスト太郎
+    ssl_verify: false      # GreenMail は自己署名証明書のため

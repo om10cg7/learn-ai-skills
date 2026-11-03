@@ -1,0 +1,67 @@
+# accounts.yaml の見本。コピーして config/accounts.yaml を作る（accounts.yaml は Git に含めない）。
+# パスワードはここに書かず、password_env に書いた環境変数名で .env から読む。
+
+default_days: 7            # search_emails の既定の遡り日数
+default_unread_only: true  # 既定で未読のみ
+default_limit: 20          # 1 アカウントあたりの最大件数
+body_max_chars: 8000       # get_email で返す本文の上限
+
+accounts:
+  - name: sakura
+    display_name: 田中 一郎
+    email: ichiro@example.jp
+    imap_host: mail.example.jp
+    imap_port: 993
+    username: ichiro@example.jp
+    auth: password
+    password_env: SAKURA_PASSWORD
+    signature: |
+      田中 一郎
+      ichiro@example.jp
+    folders:            # 自動判別できない場合だけ指定（null なら自動）
+      drafts: null      # 例: INBOX.Drafts
+      trash: null       # 例: INBOX.Trash
+    ssl_ca_file: null   # 自己署名証明書なら /config/ca.pem のように指定
+
+  - name: gmail
+    display_name: 田中 一郎
+    email: example@gmail.com
+    imap_host: imap.gmail.com
+    imap_port: 993
+    username: example@gmail.com
+    auth: password      # 2 段階認証 + アプリパスワード。Phase 6 で oauth2 に切り替え予定
+    password_env: GMAIL_APP_PASSWORD
+    signature: |
+      田中 一郎
+
+  # outlook.com は OAuth2 必須のため Phase 6 で対応（auth: oauth2 は現時点では未実装エラーになる）
+  # - name: outlook
+  #   display_name: 田中 一郎
+  #   email: example@outlook.com
+  #   imap_host: outlook.office365.com
+  #   imap_port: 993
+  #   username: example@outlook.com
+  #   auth: oauth2
+
+  # ---------- OAuth2 の設定例（Phase 6） ----------
+  # 初回: docker compose run --rm mail-mcp auth outlook   （表示された URL とコードで Microsoft にログイン）
+  # - name: outlook
+  #   display_name: 田中 一郎
+  #   email: example@outlook.com
+  #   imap_host: outlook.office365.com
+  #   imap_port: 993
+  #   username: example@outlook.com
+  #   auth: oauth2
+  #   oauth2_provider: microsoft
+  #   oauth2_client_id: 00000000-0000-0000-0000-000000000000   # Entra ID のアプリ登録（公開クライアント）
+  #   signature: |
+  #     田中 一郎
+  #
+  # Gmail を OAuth2 に切り替える場合（Google Cloud で「デスクトップアプリ」の OAuth クライアントを作成）
+  # 初回: docker compose run --rm -p 8765:8765 mail-mcp auth gmail   （表示された URL をブラウザで開く）
+  # - name: gmail
+  #   ...
+  #   auth: oauth2
+  #   oauth2_provider: google
+  #   oauth2_client_id: xxxx.apps.googleusercontent.com
+  #   oauth2_client_secret_env: GMAIL_OAUTH_CLIENT_SECRET

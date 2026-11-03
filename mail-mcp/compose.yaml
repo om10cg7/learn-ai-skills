@@ -1,0 +1,31 @@
+# 用途:
+#   docker compose build            … MCP サーバーのイメージ作成
+#   docker compose up -d greenmail  … ローカルのテスト用メールサーバー起動
+#   docker compose run --rm mail-mcp … 手動起動（通常は Claude Desktop 側の設定から起動するので不要）
+services:
+  mail-mcp:
+    build: .
+    image: mail-mcp:latest
+    stdin_open: true
+    env_file: .env
+    environment:
+      TZ: Asia/Tokyo
+    volumes:
+      - ./config:/config:ro
+      - ./tokens:/tokens          # OAuth2 のトークン保存先（Git 管理外）
+    ports:
+      - "8765:8765"               # Google の OAuth2 初回ログイン用（mail-mcp auth gmail のときだけ使う）
+
+  greenmail:
+    image: greenmail/standalone:2.1.0
+    environment:
+      GREENMAIL_OPTS: >-
+        -Dgreenmail.setup.test.all
+        -Dgreenmail.hostname=0.0.0.0
+        -Dgreenmail.auth.disabled
+        -Dgreenmail.users=test:test@localhost
+        -Dgreenmail.verbose
+    ports:
+      - "3025:3025"   # SMTP（テストメール投入用）
+      - "3143:3143"   # IMAP（平文）
+      - "3993:3993"   # IMAPS

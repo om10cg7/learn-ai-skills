@@ -1,0 +1,9 @@
+.env
+config/accounts.yaml
+config/*.pem
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+dist/
+tokens/

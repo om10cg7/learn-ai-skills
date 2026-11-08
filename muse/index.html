@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>要約一覧（このチャット）</title>
+<style>
+body{font-family:-apple-system,'Hiragino Sans',sans-serif;margin:0;background:#f6f6f4;color:#222}
+header{position:sticky;top:0;background:#fff;border-bottom:1px solid #ddd;padding:14px 16px;z-index:5}
+h1{font-size:20px;margin:0 0 6px}
+.sub{font-size:13px;color:#666}
+.controls{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+input,select{font-size:15px;padding:8px;border:1px solid #bbb;border-radius:8px}
+main{max-width:860px;margin:0 auto;padding:14px}
+.card{background:#fff;border:1px solid #e2e2de;border-radius:12px;padding:14px 16px;margin:0 0 12px}
+.meta{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:#777;align-items:center}
+.no{background:#222;color:#fff;border-radius:999px;padding:1px 8px}
+.cat{background:#eef3ff;border-radius:999px;padding:1px 8px;color:#345}
+h2{font-size:17px;margin:8px 0 6px}
+p{font-size:14px;line-height:1.7;margin:0 0 10px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+a.src{font-size:14px;color:#0b5bd3;font-weight:600}
+button.embedbtn{font-size:14px;padding:7px 12px;border:1px solid #bbb;background:#fafafa;border-radius:8px;cursor:pointer}
+.embedbox iframe{width:100%;max-width:540px;height:620px;border:0;margin-top:10px;background:#fff}
+.count{font-size:13px;color:#666;margin:4px 0 12px}
+footer{max-width:860px;margin:0 auto;padding:0 14px 30px;font-size:12px;color:#888}
+</style></head><body>
+<header>
+<h1>要約一覧（要約した投稿まとめ）</h1>
+<div class="sub">全80件 ・ 2026-10-26〜2026-11-08 ・ このチャット＋他チャットで要約した分を含みます。各カードに元ネタURLと、埋め込みで画像を表示するボタンを付けています（Threadsは埋め込み非対応のためリンクのみ）。</div>
+<div class="controls">
+<input id="q" type="search" placeholder="検索（例：Remotion、Lightroom）" style="flex:1;min-width:200px">
+<select id="cat"><option value="">全カテゴリ</option><option value="AIツール">AIツール</option><option value="AIニュース">AIニュース</option><option value="GitHub">GitHub</option><option value="Skill単体">Skill単体</option><option value="Skill集">Skill集</option><option value="デザイン">デザイン</option><option value="パーソナルAI">パーソナルAI</option><option value="写真編集">写真編集</option><option value="動画">動画</option><option value="用語集">用語集</option><option value="画像生成">画像生成</option><option value="番外">番外</option><option value="知識管理">知識管理</option><option value="自動化">自動化</option><option value="連携・MCP">連携・MCP</option><option value="運用・SNS">運用・SNS</option><option value="運用・自動化">運用・自動化</option><option value="音楽">音楽</option></select>
+</div>
+</header>
+<main>
+<div class="count" id="count"></div>
+
+<article class="card" data-cat="連携・MCP" data-text="official-mcp-servers カタログ（voltagent）テキスト依頼連携・mcp公式mcpサーバー280以上の一覧。stripe、supabase、figma、notion、cloudflare、google等。aiコーディングエージェントをdb・決済・ドキュメントへ接続する探し先。さくらメールmcp自作時の参考にもなる。">
+  <div class="meta"><span class="no">1</span><span class="date">2026-10-26</span><span class="cat">連携・MCP</span><span class="creator">テキスト依頼</span></div>
+  <h2>official-mcp-servers カタログ（VoltAgent）</h2>
+  <p>公式MCPサーバー280以上の一覧。Stripe、Supabase、Figma、Notion、Cloudflare、Google等。AIコーディングエージェントをDB・決済・ドキュメントへ接続する探し先。さくらメールMCP自作時の参考にもなる。</p>
+  <div class="row"><span class="src off">元ネタURLなし（テキスト依頼）</span></div>
+</article>
+<article class="card" data-cat="自動化" data-text="google artemis（android操作oss）@igao.ia自動化aiエージェントが実機androidを操作する無料oss（mcp連携、flash／pro）。検証済み：google公式githubあり。ただしadb前提でタップ・入力・インストールまで可能なため検証機＋テストアカウント推奨。">
+  <div class="meta"><span class="no">2</span><span class="date">2026-10-26</span><span class="cat">自動化</span><span class="creator">@igao.ia</span></div>
+  <h2>Google Artemis（Android操作OSS）</h2>
+  <p>AIエージェントが実機Androidを操作する無料OSS（MCP連携、Flash／Pro）。検証済み：google公式GitHubあり。ただしADB前提でタップ・入力・インストールまで可能なため検証機＋テストアカウント推奨。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DemTZvqNMOB/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DemTZvqNMOB/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="連携・MCP" data-text="claude code 連携 5選@kakeru_kakerujj連携・mcpbrowser use、skill creator、canva、hyperframes、zapier。普段のclaude codeは能力の50%未満しか使っていない、という主張の投稿。">
+  <div class="meta"><span class="no">3</span><span class="date">2026-10-27</span><span class="cat">連携・MCP</span><span class="creator">@kakeru_kakerujj</span></div>
+  <h2>Claude Code 連携 5選</h2>
+  <p>Browser Use、Skill Creator、Canva、HyperFrames、Zapier。普段のClaude Codeは能力の50%未満しか使っていない、という主張の投稿。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/De6Wk7GiFtB/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/De6Wk7GiFtB/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="デザイン" data-text="claude デザインskill 3選@haru.ai.newsデザインfrontend-design（anthropic公式、aiっぽさ回避）、impeccable（タイポ・余白・色を整える）、taste skill（優れたサイトから学習）＋playwright mcpで画面確認と自己修正。learn-uiにノートあり。">
+  <div class="meta"><span class="no">4</span><span class="date">2026-10-27</span><span class="cat">デザイン</span><span class="creator">@haru.ai.news</span></div>
+  <h2>Claude デザインSkill 3選</h2>
+  <p>frontend-design（Anthropic公式、AIっぽさ回避）、Impeccable（タイポ・余白・色を整える）、Taste Skill（優れたサイトから学習）＋Playwright MCPで画面確認と自己修正。learn-uiにノートあり。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/De8RJ3oDjKb/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/De8RJ3oDjKb/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="動画" data-text="無料 claude アニメーションskill 3選@aevyvideoschool動画three.js（映画風3d商品cm）、remotion（ドキュメンタリー風モーショングラフィクス）、gsap（高度な2d）。良いアニメはプロンプトよりskillで決まる、という比較デモ。">
+  <div class="meta"><span class="no">5</span><span class="date">2026-10-28</span><span class="cat">動画</span><span class="creator">@aevyvideoschool</span></div>
+  <h2>無料 Claude アニメーションSkill 3選</h2>
+  <p>Three.js（映画風3D商品CM）、Remotion（ドキュメンタリー風モーショングラフィクス）、GSAP（高度な2D）。良いアニメはプロンプトよりSkillで決まる、という比較デモ。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/De_EWr0RgNZ/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/De_EWr0RgNZ/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="動画" data-text="claude 動画差別化skill 5選@mao_hiiro動画hyperframes（html→モーショングラフィクス）、onetake（ナレーション動画）、collage b-roll（コラージュ）、claude animation base（手描き風）、lemo-opuscar（コード生成で43スタイル）。いずれもgithub公開。">
+  <div class="meta"><span class="no">6</span><span class="date">2026-10-28</span><span class="cat">動画</span><span class="creator">@mao_hiiro</span></div>
+  <h2>Claude 動画差別化Skill 5選</h2>
+  <p>HyperFrames（HTML→モーショングラフィクス）、onetake（ナレーション動画）、Collage B-roll（コラージュ）、Claude Animation Base（手描き風）、Lemo-Opuscar（コード生成で43スタイル）。いずれもGitHub公開。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/De_gY6KJR88/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/De_gY6KJR88/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="動画" data-text="間取り図→実写風ウォークスルー@ohneis652動画claudeでblenderに実寸モデル化→カメラ経路を引く→部屋ごとに静止画で素材固定→seedance 2.5が動きそのままに見た目だけ差し替え。間取りは動画モデルが作らないのが肝。">
+  <div class="meta"><span class="no">7</span><span class="date">2026-10-28</span><span class="cat">動画</span><span class="creator">@ohneis652</span></div>
+  <h2>間取り図→実写風ウォークスルー</h2>
+  <p>ClaudeでBlenderに実寸モデル化→カメラ経路を引く→部屋ごとに静止画で素材固定→Seedance 2.5が動きそのままに見た目だけ差し替え。間取りは動画モデルが作らないのが肝。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/De-LrmAixqM/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/De-LrmAixqM/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="動画" data-text="claude code × muse 連携でai動画@kou_ai.in_sta動画招待コードで期限なし10億トークン特典は実在を確認済み。ただし動画は1本約10秒・同時生成上限があり『無限に作れる』は誇張。本人は既存ユーザーのため新規招待は対象外。">
+  <div class="meta"><span class="no">8</span><span class="date">2026-10-28</span><span class="cat">動画</span><span class="creator">@kou_ai.in_sta</span></div>
+  <h2>Claude Code × Muse 連携でAI動画</h2>
+  <p>招待コードで期限なし10億トークン特典は実在を確認済み。ただし動画は1本約10秒・同時生成上限があり『無限に作れる』は誇張。本人は既存ユーザーのため新規招待は対象外。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/De__m3OMHjz/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/De__m3OMHjz/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="運用・SNS" data-text="instagram agent skill 13個セット@almantiqi3運用・sns/ig-reel、/ig-profile、/ig-plan、/ig-viral等13個（github: jakeschincariol/instagram-agent-skill）。訂正済み：実際は下書き作成のみでinstagramへ接続せず、投稿・コメントは本人が行う。">
+  <div class="meta"><span class="no">9</span><span class="date">2026-10-29</span><span class="cat">運用・SNS</span><span class="creator">@almantiqi3</span></div>
+  <h2>Instagram Agent Skill 13個セット</h2>
+  <p>/ig-reel、/ig-profile、/ig-plan、/ig-viral等13個（GitHub: Jakeschincariol/instagram-agent-skill）。訂正済み：実際は下書き作成のみでInstagramへ接続せず、投稿・コメントは本人が行う。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfCbV92z6qB/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfCbV92z6qB/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="動画" data-text="claude motion 発表@zeeuiux動画プロンプト／pdfから約30秒の解説動画。動画生成モデルではなくclaudeがコードでアニメーションを書くため文字・数字が編集可能。検証済み：team／enterprise向けベータ、個人プランでは使えない。">
+  <div class="meta"><span class="no">10</span><span class="date">2026-10-29</span><span class="cat">動画</span><span class="creator">@zeeuiux</span></div>
+  <h2>Claude Motion 発表</h2>
+  <p>プロンプト／PDFから約30秒の解説動画。動画生成モデルではなくClaudeがコードでアニメーションを書くため文字・数字が編集可能。検証済み：Team／Enterprise向けベータ、個人プランでは使えない。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DexH8oLgGjk/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DexH8oLgGjk/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="デザイン" data-text="デザインリソース 12選@codewithnishantデザインmodulify.ai、landdding.com、motionin.design、wonderlist.design、iconly.design、fontinlogo.com、on.design、godly.website、60fps.design、footer.design、recent.design、backgrounds.supply。godlyのみ既存ノートと重複。">
+  <div class="meta"><span class="no">11</span><span class="date">2026-10-29</span><span class="cat">デザイン</span><span class="creator">@codewithnishant</span></div>
+  <h2>デザインリソース 12選</h2>
+  <p>modulify.ai、landdding.com、motionin.design、wonderlist.design、iconly.design、fontinlogo.com、on.design、godly.website、60fps.design、footer.design、recent.design、backgrounds.supply。godlyのみ既存ノートと重複。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DezU-xDkzFO/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DezU-xDkzFO/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="動画" data-text="claudeを動画編集者にする5パス方式@zeeuiux動画01 transcribe（単語単位タイムスタンプ）→02 cut-out（背景除去）→03 captions（音声同期字幕）→04 motion（発言に合わせた図形）→05 sound（効果音、-14 lufs）。">
+  <div class="meta"><span class="no">12</span><span class="date">2026-10-29</span><span class="cat">動画</span><span class="creator">@zeeuiux</span></div>
+  <h2>Claudeを動画編集者にする5パス方式</h2>
+  <p>01 Transcribe（単語単位タイムスタンプ）→02 Cut-out（背景除去）→03 Captions（音声同期字幕）→04 Motion（発言に合わせた図形）→05 Sound（効果音、-14 LUFS）。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/Dei5MKHgHyB/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/Dei5MKHgHyB/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="写真編集" data-text="lightroom マスキング講座@mikita.yo写真編集全11枚のカルーセル。ヒョウ・サル・象の作例で、被写体を目立たせる／精密に編集する／自分のスタイルを作る、が目的。最後のスライドで『masking』コメントにより無料講座配布。">
+  <div class="meta"><span class="no">13</span><span class="date">2026-10-29</span><span class="cat">写真編集</span><span class="creator">@mikita.yo</span></div>
+  <h2>Lightroom マスキング講座</h2>
+  <p>全11枚のカルーセル。ヒョウ・サル・象の作例で、被写体を目立たせる／精密に編集する／自分のスタイルを作る、が目的。最後のスライドで『Masking』コメントにより無料講座配布。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/De7B0m3DIAF/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/De7B0m3DIAF/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="Skill単体" data-text="anatomy skill（対話型図解）@dannystuartskill単体アイデアを一言で伝えると機械を部品ごとに描く対話型図解を生成（レコードプレーヤーは84部品）。/anatomy で実行。生成は低速が前提。github: wheresryan22/anatomy。">
+  <div class="meta"><span class="no">14</span><span class="date">2026-10-29</span><span class="cat">Skill単体</span><span class="creator">@dannystuart</span></div>
+  <h2>Anatomy Skill（対話型図解）</h2>
+  <p>アイデアを一言で伝えると機械を部品ごとに描く対話型図解を生成（レコードプレーヤーは84部品）。/anatomy で実行。生成は低速が前提。GitHub: wheresryan22/anatomy。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/De9ji2QhO6J/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/De9ji2QhO6J/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="Skill集" data-text="無料 claude skill 99個／6リポジトリ@gut1nskill集marketing 52、social media 17、design 9、finance 8（anthropic公式）、legal 9（同）、documents 4（同、docx／pdf／pptx／xlsx）を『全チーム』に見立てて紹介。">
+  <div class="meta"><span class="no">15</span><span class="date">2026-10-29</span><span class="cat">Skill集</span><span class="creator">@gut1n</span></div>
+  <h2>無料 Claude Skill 99個／6リポジトリ</h2>
+  <p>Marketing 52、Social Media 17、Design 9、Finance 8（Anthropic公式）、Legal 9（同）、Documents 4（同、DOCX／PDF／PPTX／XLSX）を『全チーム』に見立てて紹介。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfCdgpPG6mD/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfCdgpPG6mD/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="Skill集" data-text="claude に入れるもの 42個@charliehillsskill集60日分の利用ログから5部門構成：build &amp; test 8（superpowers、gstack、graphify、playwright等）、design &amp; animate 9、grow 8、make 8、run 9。接続最多はnotion 242回。助言は全部入れず必要な部門から1個。">
+  <div class="meta"><span class="no">16</span><span class="date">2026-10-29</span><span class="cat">Skill集</span><span class="creator">@charliehills</span></div>
+  <h2>Claude に入れるもの 42個</h2>
+  <p>60日分の利用ログから5部門構成：BUILD &amp; TEST 8（Superpowers、gstack、graphify、Playwright等）、DESIGN &amp; ANIMATE 9、GROW 8、MAKE 8、RUN 9。接続最多はNotion 242回。助言は全部入れず必要な部門から1個。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/De2kpfnCFeH/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/De2kpfnCFeH/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="動画" data-text="ブランドのクローン＋stripe風モーション16種@charliehills動画ブランドの実コードをclaude codeに読ませてスタイルファイル化し、その下にモーション指示を貼る6ステップ。形容詞でなく実コードを渡すのが肝。particles→logo、number→roll等16種。">
+  <div class="meta"><span class="no">17</span><span class="date">2026-10-29</span><span class="cat">動画</span><span class="creator">@charliehills</span></div>
+  <h2>ブランドのクローン＋Stripe風モーション16種</h2>
+  <p>ブランドの実コードをClaude Codeに読ませてスタイルファイル化し、その下にモーション指示を貼る6ステップ。形容詞でなく実コードを渡すのが肝。Particles→logo、Number→roll等16種。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/Dez_3s4CES-/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/Dez_3s4CES-/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="知識管理" data-text="graphify + obsidian + claude code（第二の脳）@divyannshisharma知識管理文書群を知識マップ化（実験：171ページ→591知見／685接続／67グループ）し、graphify --obsidian で591ノート化。まず別vaultで作ってからメインへ移すのが注意点。">
+  <div class="meta"><span class="no">18</span><span class="date">2026-10-29</span><span class="cat">知識管理</span><span class="creator">@divyannshisharma</span></div>
+  <h2>Graphify + Obsidian + Claude Code（第二の脳）</h2>
+  <p>文書群を知識マップ化（実験：171ページ→591知見／685接続／67グループ）し、graphify --obsidian で591ノート化。まず別Vaultで作ってからメインへ移すのが注意点。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/De9mv5mkpvt/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/De9mv5mkpvt/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="運用・自動化" data-text="claude code 神機能 7選@tatsu.insta_ai運用・自動化カレンダー連携、リモコン操作、claude in chrome、meta api連携、utage連携、codexプラグイン連携、claude skills。『精度38%→98%』は動画内の主張で根拠未確認。">
+  <div class="meta"><span class="no">19</span><span class="date">2026-10-30</span><span class="cat">運用・自動化</span><span class="creator">@tatsu.insta_ai</span></div>
+  <h2>Claude Code 神機能 7選</h2>
+  <p>カレンダー連携、リモコン操作、Claude in Chrome、Meta API連携、UTAGE連携、Codexプラグイン連携、Claude Skills。『精度38%→98%』は動画内の主張で根拠未確認。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfF-ipmDYD3/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfF-ipmDYD3/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="動画" data-text="arcads製 linkedin premium 広告デモ@riki.bosso動画opus 5.5＋arcadsで作ったai広告。出演者は全員ai生成で、最後に『この広告の顔は全部arcads製』と明かす。広告内の数字（返信率2倍等）は未検証。">
+  <div class="meta"><span class="no">20</span><span class="date">2026-10-30</span><span class="cat">動画</span><span class="creator">@riki.bosso</span></div>
+  <h2>Arcads製 LinkedIn Premium 広告デモ</h2>
+  <p>Opus 5.5＋Arcadsで作ったAI広告。出演者は全員AI生成で、最後に『この広告の顔は全部Arcads製』と明かす。広告内の数字（返信率2倍等）は未検証。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfFgOWOxuZu/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfFgOWOxuZu/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="パーソナルAI" data-text="自分専用 jarvis 構築 4パーツ@ibraviz.aiパーソナルaibrain＝claude code＋仕事ごとのskillファイル、memory＝obsidian vault、voice＝ローカル音声、face＝プロンプト1つで作るhud。ループは『話す→振り分け→実行→記憶』。">
+  <div class="meta"><span class="no">21</span><span class="date">2026-10-30</span><span class="cat">パーソナルAI</span><span class="creator">@ibraviz.ai</span></div>
+  <h2>自分専用 JARVIS 構築 4パーツ</h2>
+  <p>Brain＝Claude Code＋仕事ごとのSkillファイル、Memory＝Obsidian Vault、Voice＝ローカル音声、Face＝プロンプト1つで作るHUD。ループは『話す→振り分け→実行→記憶』。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfFPLqaoO03/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfFPLqaoO03/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="動画" data-text="claude opus 5.5 × remotion 8ステップ@ai.byarsh動画claude desktop→codeタブ（pro以上）→remotion skill導入→フォルダ構成→プロンプト→絵コンテ確認→言葉で修正→prompt＞preview＞feedbackの反復。elevenlabs／whisper連携可。">
+  <div class="meta"><span class="no">22</span><span class="date">2026-10-30</span><span class="cat">動画</span><span class="creator">@ai.byarsh</span></div>
+  <h2>Claude Opus 5.5 × Remotion 8ステップ</h2>
+  <p>Claude Desktop→Codeタブ（Pro以上）→Remotion Skill導入→フォルダ構成→プロンプト→絵コンテ確認→言葉で修正→Prompt＞Preview＞Feedbackの反復。ElevenLabs／Whisper連携可。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfFZBPijo-b/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfFZBPijo-b/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="デザイン" data-text="プロダクトデザイナー向けclaude skill 5選@vamshi.workデザインui/ux pro max、frontend design、emil kowalski（モーション）、app store design、gstack（0〜10点採点）。指定6枚目はgstack。導入順は pro max→emil→gstack。">
+  <div class="meta"><span class="no">23</span><span class="date">2026-10-31</span><span class="cat">デザイン</span><span class="creator">@vamshi.work</span></div>
+  <h2>プロダクトデザイナー向けClaude Skill 5選</h2>
+  <p>UI/UX Pro Max、Frontend Design、Emil Kowalski（モーション）、App Store Design、gstack（0〜10点採点）。指定6枚目はgstack。導入順は Pro Max→Emil→gstack。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/De_JxR-n6OT/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/De_JxR-n6OT/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="パーソナルAI" data-text="jarvis os 2.0@juanbertorello.iaパーソナルai5ピース構成（claude code／obsidian／ローカル音声whisper・kokoro／skills最大10／2パネル）。新要素はstep 5：mailerfindをmcp接続して見込み客探し（企業の公開連絡先をvault保存、送信は承認時のみ）。">
+  <div class="meta"><span class="no">24</span><span class="date">2026-11-02</span><span class="cat">パーソナルAI</span><span class="creator">@juanbertorello.ia</span></div>
+  <h2>JARVIS OS 2.0</h2>
+  <p>5ピース構成（Claude Code／Obsidian／ローカル音声Whisper・Kokoro／Skills最大10／2パネル）。新要素はStep 5：MailerfindをMCP接続して見込み客探し（企業の公開連絡先をVault保存、送信は承認時のみ）。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DenRZJKjGGN/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DenRZJKjGGN/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="知識管理" data-text="graphify + obsidian + claude code（gut1n版）@gut1n知識管理既要約テーマの別投稿。コマンドは /graphify . --obsidian、出力はhtmlマップ／json／vaultフォルダ。vaultは分離・マージ・手動コピーの3択。/graphify query で関係をたどる質問ができる。">
+  <div class="meta"><span class="no">25</span><span class="date">2026-11-02</span><span class="cat">知識管理</span><span class="creator">@gut1n</span></div>
+  <h2>Graphify + Obsidian + Claude Code（gut1n版）</h2>
+  <p>既要約テーマの別投稿。コマンドは /graphify . --obsidian、出力はHTMLマップ／JSON／Vaultフォルダ。Vaultは分離・マージ・手動コピーの3択。/graphify query で関係をたどる質問ができる。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfD2tB8l7y0/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfD2tB8l7y0/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="連携・MCP" data-text="ui向け claude mcpツール 7選@sanskaar.ai連携・mcpfigma、shadcn、playwright、chrome devtools、21st.dev magic、penpot、context7。mcpは『ai版usb-c』という例え。なしだと推測、ありだと実デザイン・実ページ・最新ドキュメントを読める。">
+  <div class="meta"><span class="no">26</span><span class="date">2026-11-02</span><span class="cat">連携・MCP</span><span class="creator">@sanskaar.ai</span></div>
+  <h2>UI向け Claude MCPツール 7選</h2>
+  <p>Figma、shadcn、Playwright、Chrome DevTools、21st.dev Magic、Penpot、Context7。MCPは『AI版USB-C』という例え。なしだと推測、ありだと実デザイン・実ページ・最新ドキュメントを読める。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfCj6EVErQQ/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfCj6EVErQQ/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="Skill集" data-text="アプリ作りで最初に入れる5つ@maruta_masayukiskill集agent skills（addy osmaniの開発手法）、context7（月1,000回まで無料と紹介）、graphify（コード探索用途）、21st.dev magic mcp、strix（aiハッカーによる脆弱性診断）。新規はagent skillsとstrix。">
+  <div class="meta"><span class="no">27</span><span class="date">2026-11-02</span><span class="cat">Skill集</span><span class="creator">@maruta_masayuki</span></div>
+  <h2>アプリ作りで最初に入れる5つ</h2>
+  <p>Agent Skills（Addy Osmaniの開発手法）、Context7（月1,000回まで無料と紹介）、Graphify（コード探索用途）、21st.dev Magic MCP、Strix（AIハッカーによる脆弱性診断）。新規はAgent SkillsとStrix。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfO7456hnT9/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfO7456hnT9/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="番外" data-text="stripe公式 広告投稿@stripehq番外『わずか数クリックでオンライン販売を簡単に開始できます。コーディングは不要です。』というノーコード販売の宣伝、単体画像投稿。本人の指示で番外として記録。">
+  <div class="meta"><span class="no">28</span><span class="date">2026-11-02</span><span class="cat">番外</span><span class="creator">@stripehq</span></div>
+  <h2>Stripe公式 広告投稿</h2>
+  <p>『わずか数クリックでオンライン販売を簡単に開始できます。コーディングは不要です。』というノーコード販売の宣伝、単体画像投稿。本人の指示で番外として記録。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/De-lKQ7MSKp/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/De-lKQ7MSKp/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="画像生成" data-text="gemini 写真変換プロンプト 6種@yamamon_sos画像生成店の写真1枚＋文を入れる型：/menuposter（看板ポスター）、/closeup（シズル感）、/instagram（真上から）、/tablewide（テーブル全体）、/drinkshot（水しぶき広告）、/interior（にぎわう夜）。/は公式コマンドではなくプロンプトの見出し。">
+  <div class="meta"><span class="no">29</span><span class="date">2026-11-02</span><span class="cat">画像生成</span><span class="creator">@yamamon_sos</span></div>
+  <h2>Gemini 写真変換プロンプト 6種</h2>
+  <p>店の写真1枚＋文を入れる型：/menuposter（看板ポスター）、/closeup（シズル感）、/instagram（真上から）、/tablewide（テーブル全体）、/drinkshot（水しぶき広告）、/interior（にぎわう夜）。/は公式コマンドではなくプロンプトの見出し。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/Debpv1JBqaV/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/Debpv1JBqaV/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="動画" data-text="gemini 写真→動画 神コマンド 3つ@miporin_aiai動画/miniature town（ジオラマ化）、/city fpv to storefront（ドローンで店頭へ）、/push in to counter（カウンターへズーム）。無料版では使えないという画面注記あり。">
+  <div class="meta"><span class="no">30</span><span class="date">2026-11-02</span><span class="cat">動画</span><span class="creator">@miporin_aiai</span></div>
+  <h2>Gemini 写真→動画 神コマンド 3つ</h2>
+  <p>/miniature town（ジオラマ化）、/City FPV to storefront（ドローンで店頭へ）、/push in to counter（カウンターへズーム）。無料版では使えないという画面注記あり。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfMmVSEBed_/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfMmVSEBed_/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="用語集" data-text="モーショングラフィックス用語 10選@ai.sentic用語集kinetic typography、shape animation、logo animation、infographic、transition、particles、liquid、isometric、3d motion、seamless loop。英語プロンプト例3つ付き（sentic用語集シリーズ）。">
+  <div class="meta"><span class="no">31</span><span class="date">2026-11-02</span><span class="cat">用語集</span><span class="creator">@ai.sentic</span></div>
+  <h2>モーショングラフィックス用語 10選</h2>
+  <p>Kinetic Typography、Shape Animation、Logo Animation、Infographic、Transition、Particles、Liquid、Isometric、3D Motion、Seamless Loop。英語プロンプト例3つ付き（SENTIC用語集シリーズ）。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfJFPd1jxsc/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfJFPd1jxsc/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="運用・SNS" data-text="ポストメッシュ × claude コネクタ@hide_carry運用・sns自社開発のsns一括予約投稿ツールをclaudeのコネクタに足すと、チャットで投稿・予約ができる。伸びた投稿の数字から次ネタ提案も（数字機能はプロプラン）。7日間無料トライアル。">
+  <div class="meta"><span class="no">32</span><span class="date">2026-11-02</span><span class="cat">運用・SNS</span><span class="creator">@hide_carry</span></div>
+  <h2>ポストメッシュ × Claude コネクタ</h2>
+  <p>自社開発のSNS一括予約投稿ツールをClaudeのコネクタに足すと、チャットで投稿・予約ができる。伸びた投稿の数字から次ネタ提案も（数字機能はプロプラン）。7日間無料トライアル。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfPQgiGCIpw/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfPQgiGCIpw/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="写真編集" data-text="アイスランド空撮 カラーグレーディング手順@manuel_picker写真編集4k/30fpsで撮る→4kタイムライン→変換lutでlog→rec.709→色補正→マスクと局所調整で仕上げ。『単一の設定ではなく手順全部の組み合わせ』が主張。">
+  <div class="meta"><span class="no">33</span><span class="date">2026-11-02</span><span class="cat">写真編集</span><span class="creator">@manuel_picker</span></div>
+  <h2>アイスランド空撮 カラーグレーディング手順</h2>
+  <p>4K/30fpsで撮る→4Kタイムライン→変換LUTでLOG→Rec.709→色補正→マスクと局所調整で仕上げ。『単一の設定ではなく手順全部の組み合わせ』が主張。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/Dd1lWqVs2-s/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/Dd1lWqVs2-s/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="用語集" data-text="レンズ用語 10選@ai.sentic用語集標準、広角、超広角、望遠、魚眼、マクロ、ボケ、浅い被写界深度、パンフォーカス、ティルトシフト。同じキャラクターの作例で効果の違いを並べる（sentic用語集シリーズ）。">
+  <div class="meta"><span class="no">34</span><span class="date">2026-11-02</span><span class="cat">用語集</span><span class="creator">@ai.sentic</span></div>
+  <h2>レンズ用語 10選</h2>
+  <p>標準、広角、超広角、望遠、魚眼、マクロ、ボケ、浅い被写界深度、パンフォーカス、ティルトシフト。同じキャラクターの作例で効果の違いを並べる（SENTIC用語集シリーズ）。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/De5flYpEq79/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/De5flYpEq79/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="用語集" data-text="カメラワーク用語 10選@ai.sentic用語集パン、チルト、ズームイン、ドリーイン、トラッキング、オービット、クレーン、ハンドヘルド、ドローン空撮、固定。ズーム（レンズで寄る）とドリー（カメラごと近づく）の区別が要点。">
+  <div class="meta"><span class="no">35</span><span class="date">2026-11-02</span><span class="cat">用語集</span><span class="creator">@ai.sentic</span></div>
+  <h2>カメラワーク用語 10選</h2>
+  <p>パン、チルト、ズームイン、ドリーイン、トラッキング、オービット、クレーン、ハンドヘルド、ドローン空撮、固定。ズーム（レンズで寄る）とドリー（カメラごと近づく）の区別が要点。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfGZzWFj4AA/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfGZzWFj4AA/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="写真編集" data-text="lightroom マスキング実演（海景）@number_3_0_2写真編集波：whites +16／texture +46。反射：exposure +0.25／temp +5。空：ハイライトを抑えdehaze +6。仕上げはsカーブ＋影は青（h215/s6）・ハイライトは金（h38/s8）。部分ごとに分けて触る実演。">
+  <div class="meta"><span class="no">36</span><span class="date">2026-11-02</span><span class="cat">写真編集</span><span class="creator">@number_3_0_2</span></div>
+  <h2>Lightroom マスキング実演（海景）</h2>
+  <p>波：Whites +16／Texture +46。反射：Exposure +0.25／Temp +5。空：ハイライトを抑えDehaze +6。仕上げはSカーブ＋影は青（H215/S6）・ハイライトは金（H38/S8）。部分ごとに分けて触る実演。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfBMd-4T_6S/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfBMd-4T_6S/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="写真編集" data-text="lightroom 奥行きを足す3ステップ（森）@haphann96写真編集1)マスクで色調整し被写体と背景を分離、2)円形マスクで日光を足す、3)グラデーションマスクで少し落として視線をモデルへ。全設定値はコメント欄に置く形式。">
+  <div class="meta"><span class="no">37</span><span class="date">2026-11-02</span><span class="cat">写真編集</span><span class="creator">@haphann96</span></div>
+  <h2>Lightroom 奥行きを足す3ステップ（森）</h2>
+  <p>1)マスクで色調整し被写体と背景を分離、2)円形マスクで日光を足す、3)グラデーションマスクで少し落として視線をモデルへ。全設定値はコメント欄に置く形式。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DeL-WFqzhAh/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DeL-WFqzhAh/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="用語集" data-text="配色用語 10選@ai.sentic用語集モノクロ、パステル、ネオン、アースカラー、ビビッド、セピア、ダスティ、補色、ハイコントラスト、グラデーション。同じ『家と木』を10配色で描き分け（sentic用語集シリーズ）。">
+  <div class="meta"><span class="no">38</span><span class="date">2026-11-02</span><span class="cat">用語集</span><span class="creator">@ai.sentic</span></div>
+  <h2>配色用語 10選</h2>
+  <p>モノクロ、パステル、ネオン、アースカラー、ビビッド、セピア、ダスティ、補色、ハイコントラスト、グラデーション。同じ『家と木』を10配色で描き分け（SENTIC用語集シリーズ）。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/Dex1kQXEa0m/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/Dex1kQXEa0m/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="写真編集" data-text="lightroom シネマティック・グレーディング（馬と女性）@cinephor1a写真編集全9枚。rawは85mm／iso 500／f2.8／1/250s。radial gradientで霧、subject maskで分離、radial 2枚目で周辺を落とし、background maskで背景を単色に寄せる。カーブ／hsl／カラーホイールで仕上げ。">
+  <div class="meta"><span class="no">39</span><span class="date">2026-11-02</span><span class="cat">写真編集</span><span class="creator">@cinephor1a</span></div>
+  <h2>Lightroom シネマティック・グレーディング（馬と女性）</h2>
+  <p>全9枚。RAWは85mm／ISO 500／F2.8／1/250s。Radial Gradientで霧、Subject Maskで分離、Radial 2枚目で周辺を落とし、Background Maskで背景を単色に寄せる。カーブ／HSL／カラーホイールで仕上げ。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfISpc-ku62/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfISpc-ku62/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="デザイン" data-text="aiに『センス』を与えるskill 5選 part 1@talescavalcanti.iaデザインimpeccableとtaste skillは既出（@haru.ai.newsの3選と重複）。新規はhallmark（テーマ21種・ページ構造・品質チェック58項目）とhue（ブランドの見た目を専用skill化）。shadcn/ui公式skillも。締めは『skills』コメントでdm配布。">
+  <div class="meta"><span class="no">40</span><span class="date">2026-11-03</span><span class="cat">デザイン</span><span class="creator">@talescavalcanti.ia</span></div>
+  <h2>AIに『センス』を与えるSkill 5選 Part 1</h2>
+  <p>ImpeccableとTaste Skillは既出（@haru.ai.newsの3選と重複）。新規はHallmark（テーマ21種・ページ構造・品質チェック58項目）とHue（ブランドの見た目を専用Skill化）。shadcn/ui公式Skillも。締めは『SKILLS』コメントでDM配布。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfP03vpGkoq/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfP03vpGkoq/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="Skill集" data-text="claude code プラグイン30選（5棚×6）@gut1nskill集棚は『シニアのようにプログラムする／調査と理解／大規模でもトークン節約／デザインとビジュアル／文章と動画』。各プラグインにスター数とインストール行付き。全部入れずsuperpowersとcavemanから、が助言。全リストは『e89』コメントでdm（個別名は画像から読み取り不可）。">
+  <div class="meta"><span class="no">41</span><span class="date">2026-11-03</span><span class="cat">Skill集</span><span class="creator">@gut1n</span></div>
+  <h2>Claude Code プラグイン30選（5棚×6）</h2>
+  <p>棚は『シニアのようにプログラムする／調査と理解／大規模でもトークン節約／デザインとビジュアル／文章と動画』。各プラグインにスター数とインストール行付き。全部入れずSuperpowersとCavemanから、が助言。全リストは『E89』コメントでDM（個別名は画像から読み取り不可）。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfFfmygmz-9/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfFfmygmz-9/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="デザイン" data-text="制作段階別の無料claude skill 5選@dannystuartデザイン企画＝designer skills pack（唯一の新規名）→実装＝frontend design（anthropic）→質感＝taste skill→動き＝emil kowalski→最終チェック＝impeccable。taste skillはフルビルド30〜45分と重い点、導入元は信頼できる所だけ、と注意。">
+  <div class="meta"><span class="no">42</span><span class="date">2026-11-03</span><span class="cat">デザイン</span><span class="creator">@dannystuart</span></div>
+  <h2>制作段階別の無料Claude Skill 5選</h2>
+  <p>企画＝Designer Skills Pack（唯一の新規名）→実装＝Frontend Design（Anthropic）→質感＝Taste Skill→動き＝Emil Kowalski→最終チェック＝Impeccable。Taste Skillはフルビルド30〜45分と重い点、導入元は信頼できる所だけ、と注意。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfPvzSav6s0/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfPvzSav6s0/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="デザイン" data-text="design 2025 vs 2026：ai osの作り方@charliehillsデザイン2025年はグラフィック1枚にタブ30個、2026年はclaudeのチャット1つ、という主張。claude.md（ルール）＋design.md（ブランド）＋examples/（自分の最良作）＋仕事ごとに1 skill。アプリは5群（brain／images／code／plan／finish）。締めは有料コホート募集（『aios』コメント）。">
+  <div class="meta"><span class="no">43</span><span class="date">2026-11-05</span><span class="cat">デザイン</span><span class="creator">@charliehills</span></div>
+  <h2>Design 2025 vs 2026：AI OSの作り方</h2>
+  <p>2025年はグラフィック1枚にタブ30個、2026年はClaudeのチャット1つ、という主張。CLAUDE.md（ルール）＋DESIGN.md（ブランド）＋examples/（自分の最良作）＋仕事ごとに1 Skill。アプリは5群（Brain／Images／Code／Plan／Finish）。締めは有料コホート募集（『AIOS』コメント）。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfVlDBRCAyT/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfVlDBRCAyT/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="Skill集" data-text="claude skill 8選（genjutsu等）@make.first.millionskill集find skills、genjutsu（動きと世界観）、ux/ui agent、business skills、ai hormozi skill（公開動画2,000本超の教科書化）、i have adhd（次の一手に絞る）、task-observer（直しを記録し他skillを改善）、notfair（seo／ai検索／広告）。genjutsuは実在を確認済み（github: athevon/genjutsu、mitで無料、費用はclaude利用分のみ）。">
+  <div class="meta"><span class="no">44</span><span class="date">2026-11-05</span><span class="cat">Skill集</span><span class="creator">@make.first.million</span></div>
+  <h2>Claude Skill 8選（Genjutsu等）</h2>
+  <p>Find Skills、Genjutsu（動きと世界観）、UX/UI Agent、Business Skills、AI Hormozi Skill（公開動画2,000本超の教科書化）、I Have ADHD（次の一手に絞る）、Task-Observer（直しを記録し他Skillを改善）、NotFair（SEO／AI検索／広告）。Genjutsuは実在を確認済み（GitHub: AThevon/genjutsu、MITで無料、費用はClaude利用分のみ）。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/De1rwwYDXrw/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/De1rwwYDXrw/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="パーソナルAI" data-text="build your own jarvis@techwith.ramパーソナルaiengine＝claude code＋skillファイル、memory＝obsidian（raw／wiki／outputs）、voice＝スペース長押しの音声入力とローカルtts、face＝ブリーフ／計画／指標／締めを表示するhud。ループはspeak→route→execute→remember。@ibraviz.aiと@juanbertorello.iaのjarvisと同型。">
+  <div class="meta"><span class="no">45</span><span class="date">2026-11-05</span><span class="cat">パーソナルAI</span><span class="creator">@techwith.ram</span></div>
+  <h2>Build your own JARVIS</h2>
+  <p>ENGINE＝Claude Code＋Skillファイル、MEMORY＝Obsidian（raw／wiki／outputs）、VOICE＝スペース長押しの音声入力とローカルTTS、FACE＝ブリーフ／計画／指標／締めを表示するHUD。ループはSPEAK→ROUTE→EXECUTE→REMEMBER。@ibraviz.aiと@juanbertorello.iaのJARVISと同型。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfUkTf4ki3f/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfUkTf4ki3f/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="運用・自動化" data-text="自動化skill 8選@sanskaar.ai運用・自動化automation-master、browser-automation、file-automation、data-analysis、research-agent、content-writer、social-media、design-automation。いずれも機能名そのままの汎用名で、具体的な公開リポジトリは投稿内に出てこないため実体は未確認。締めは『skills』コメントでdm配布。">
+  <div class="meta"><span class="no">46</span><span class="date">2026-11-05</span><span class="cat">運用・自動化</span><span class="creator">@sanskaar.ai</span></div>
+  <h2>自動化Skill 8選</h2>
+  <p>automation-master、browser-automation、file-automation、data-analysis、research-agent、content-writer、social-media、design-automation。いずれも機能名そのままの汎用名で、具体的な公開リポジトリは投稿内に出てこないため実体は未確認。締めは『Skills』コメントでDM配布。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DeegEO1EqwO/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DeegEO1EqwO/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="動画" data-text="lemo-opuscar 深掘り（opuscar 98）@ai.asap.kr動画github: lemomo-ai/lemo-opuscar（@mao_hiiroの5選で既出）。目玉作はアカデミー作品賞98作を別々の画風で描き直した6分31秒の動画で、画も音楽も編集も動画生成モデルなしにclaude opus 5.5がコードで生成。スタイル帳は98種（2d 77／2.5d 4／3d 17）公開、キャプションでは自作用に66種から選ぶとも記載。コードはmit、デモ動画はcc by 4.0。">
+  <div class="meta"><span class="no">47</span><span class="date">2026-11-05</span><span class="cat">動画</span><span class="creator">@ai.asap.kr</span></div>
+  <h2>Lemo-Opuscar 深掘り（OPUSCAR 98）</h2>
+  <p>GitHub: lemomo-ai/lemo-opuscar（@mao_hiiroの5選で既出）。目玉作はアカデミー作品賞98作を別々の画風で描き直した6分31秒の動画で、画も音楽も編集も動画生成モデルなしにClaude Opus 5.5がコードで生成。スタイル帳は98種（2D 77／2.5D 4／3D 17）公開、キャプションでは自作用に66種から選ぶとも記載。コードはMIT、デモ動画はCC BY 4.0。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfVni0MD5Ql/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfVni0MD5Ql/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="動画" data-text="claude 動画エフェクト20種@charliehills動画ワンテイクの映像1本にclaudeがコードでエフェクトを重ね、各エフェクトをskill化。grid dive、title orbit、clone room、infinite zoom、frame break、vertigo、shatter、head pop out等20種。動作はclaude code（codex可）、要ffmpeg／node／python（無料）。『全部重ねず、まずhead pop outから』が助言。">
+  <div class="meta"><span class="no">48</span><span class="date">2026-11-05</span><span class="cat">動画</span><span class="creator">@charliehills</span></div>
+  <h2>Claude 動画エフェクト20種</h2>
+  <p>ワンテイクの映像1本にClaudeがコードでエフェクトを重ね、各エフェクトをSkill化。Grid Dive、Title Orbit、Clone Room、Infinite Zoom、Frame Break、Vertigo、Shatter、Head Pop Out等20種。動作はClaude Code（Codex可）、要FFmpeg／Node／Python（無料）。『全部重ねず、まずHead Pop Outから』が助言。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfDjgGhCKec/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfDjgGhCKec/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="デザイン" data-text="デザインskill 10選 part 2（モーション・3d・仕上げ）@craftwork.designデザインcraftwork（実物素材）、design engineering（emil kowalskiのイージング等）、gsap scrolltrigger公式ガイド、motion design（lottiefiles）、shader dev（shadertoy技法36種）、three.js scroll worlds、diagram design（図44種）、frontend slides、refactoring ui（監査スコア）、web interface guidelines（vercel）。自社セール告知も含む。">
+  <div class="meta"><span class="no">49</span><span class="date">2026-11-05</span><span class="cat">デザイン</span><span class="creator">@craftwork.design</span></div>
+  <h2>デザインSkill 10選 Part 2（モーション・3D・仕上げ）</h2>
+  <p>Craftwork（実物素材）、Design Engineering（Emil Kowalskiのイージング等）、GSAP ScrollTrigger公式ガイド、Motion Design（LottieFiles）、Shader Dev（ShaderToy技法36種）、Three.js Scroll Worlds、Diagram Design（図44種）、Frontend Slides、Refactoring UI（監査スコア）、Web Interface Guidelines（Vercel）。自社セール告知も含む。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfKaOBqjUr4/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfKaOBqjUr4/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="動画" data-text="編集ソフトなしで動画編集するskill 10選@maurys_alvarez_ia動画スペイン語のカルーセル。名前が確認できたのは9つ：video-editing-skill（無音カット＋hormozi風字幕）、ffmpeg-skill（形式変換）、video-edit（結合・音声抽出）、claude-gif、motion-design、video-recap-skills（30分→3分要約）、remotion-skill、vlog-cut（台本マッチ自動カット）、videoclip-ai-skill。10個目は読み取り不可。">
+  <div class="meta"><span class="no">50</span><span class="date">2026-11-05</span><span class="cat">動画</span><span class="creator">@maurys_alvarez_ia</span></div>
+  <h2>編集ソフトなしで動画編集するSkill 10選</h2>
+  <p>スペイン語のカルーセル。名前が確認できたのは9つ：video-editing-skill（無音カット＋Hormozi風字幕）、ffmpeg-skill（形式変換）、video-edit（結合・音声抽出）、claude-gif、motion-design、video-recap-skills（30分→3分要約）、remotion-skill、vlog-cut（台本マッチ自動カット）、videoclip-AI-skill。10個目は読み取り不可。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfSgGLSGC17/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfSgGLSGC17/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="AIニュース" data-text="chatgpt images 2.6 発表（gif生成）@oz.k.ishikawaaiニュースopenai公式発表（11月4日）を1分図解：文章や写真1枚から動くgif、速度調整とコマ単位の手直し、参照画像の保存・使い回し、apiにflare（最速約6秒）とsunburst（精細さ重視）、生成は約50%高速化。全プランへ順次展開。公式発表で裏取り済み。">
+  <div class="meta"><span class="no">51</span><span class="date">2026-11-06</span><span class="cat">AIニュース</span><span class="creator">@oz.k.ishikawa</span></div>
+  <h2>ChatGPT Images 2.6 発表（GIF生成）</h2>
+  <p>OpenAI公式発表（11月4日）を1分図解：文章や写真1枚から動くGIF、速度調整とコマ単位の手直し、参照画像の保存・使い回し、APIにFlare（最速約6秒）とSunburst（精細さ重視）、生成は約50%高速化。全プランへ順次展開。公式発表で裏取り済み。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfW38gGxDR-/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfW38gGxDR-/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="連携・MCP" data-text="uiをレベルアップするツール5選（5 mcp tools for better ui）@rahul_mirji.ai連携・mcpshadcn/ui（土台）、magic ui（動き）、21st.dev（素材探し）、aceternity ui（プレミアム感）、radix ui（a11yと信頼性）。ただし『mcpツール』と銘打ちながら中身はuiコンポーネントライブラリの紹介で、mcp接続の手順はなし。sanskaarの7選と shadcn／21st.dev が重なる。">
+  <div class="meta"><span class="no">52</span><span class="date">2026-11-03</span><span class="cat">連携・MCP</span><span class="creator">@rahul_mirji.ai</span></div>
+  <h2>UIをレベルアップするツール5選（5 MCP TOOLS FOR BETTER UI）</h2>
+  <p>shadcn/ui（土台）、Magic UI（動き）、21st.dev（素材探し）、Aceternity UI（プレミアム感）、Radix UI（a11yと信頼性）。ただし『MCPツール』と銘打ちながら中身はUIコンポーネントライブラリの紹介で、MCP接続の手順はなし。sanskaarの7選と shadcn／21st.dev が重なる。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfFLCwzkqgJ/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfFLCwzkqgJ/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="動画" data-text="リールが垢抜ける編集40選（threads）@ai_yunon_ai（ゆのん）動画動画5本×8項目の技法カタログ：3d・奥行き8、レイアウト8、タイポグラフィ8、シネマティック8、切り替え8。全部claudeのhtmlコードで作ったという説明のみで、プロンプトや手順の開示はなし。技法名をプロンプトに落として使う用語集として有用。">
+  <div class="meta"><span class="no">53</span><span class="date">2026-11-03</span><span class="cat">動画</span><span class="creator">@ai_yunon_ai（ゆのん）</span></div>
+  <h2>リールが垢抜ける編集40選（Threads）</h2>
+  <p>動画5本×8項目の技法カタログ：3D・奥行き8、レイアウト8、タイポグラフィ8、シネマティック8、切り替え8。全部ClaudeのHTMLコードで作ったという説明のみで、プロンプトや手順の開示はなし。技法名をプロンプトに落として使う用語集として有用。</p>
+  <div class="row"><a class="src" href="https://www.threads.com/@ai_yunon_ai/post/DfPEV2cCJXl" target="_blank" rel="noopener">元ネタを開く</a></div>
+</article>
+<article class="card" data-cat="デザイン" data-text="サムネ背景パターン12選（threads）@mai_designlabo（まい）デザイン見本は全て『winter sale max80%off』。ベタ／グラデ／ストライプの塗り、下部・中央の帯、周囲に模様・切り抜き・イラスト、全面画像・文字羅列の12種。主張は『文言やレイアウトを変えず背景だけ差し替えるのが一番手軽な変化』。">
+  <div class="meta"><span class="no">54</span><span class="date">2026-11-03</span><span class="cat">デザイン</span><span class="creator">@mai_designlabo（まい）</span></div>
+  <h2>サムネ背景パターン12選（Threads）</h2>
+  <p>見本は全て『Winter SALE MAX80%OFF』。ベタ／グラデ／ストライプの塗り、下部・中央の帯、周囲に模様・切り抜き・イラスト、全面画像・文字羅列の12種。主張は『文言やレイアウトを変えず背景だけ差し替えるのが一番手軽な変化』。</p>
+  <div class="row"><a class="src" href="https://www.threads.com/@mai_designlabo/post/DfPWMN-j0OD" target="_blank" rel="noopener">元ネタを開く</a></div>
+</article>
+<article class="card" data-cat="動画" data-text="人物モーションパターン12種 person系（threads）@yosooi3（よそおいさん）動画スキル『よそおい図解モーション150』への追加分。上段6種は確認済み：person/talk（名前テロップ）、backdrop-word（背後に巨大な語）、orbit-icons（頭の周りをアイコン周回）、spotlight（暗転）、checklist、graph-card。下段6種はタイトル・解説が画像端で切れて読み取り不可。">
+  <div class="meta"><span class="no">55</span><span class="date">2026-11-03</span><span class="cat">動画</span><span class="creator">@yosooi3（よそおいさん）</span></div>
+  <h2>人物モーションパターン12種 person系（Threads）</h2>
+  <p>スキル『よそおい図解モーション150』への追加分。上段6種は確認済み：person/talk（名前テロップ）、backdrop-word（背後に巨大な語）、orbit-icons（頭の周りをアイコン周回）、spotlight（暗転）、checklist、graph-card。下段6種はタイトル・解説が画像端で切れて読み取り不可。</p>
+  <div class="row"><a class="src" href="https://www.threads.com/@yosooi3/post/DfQ55tGk3OR" target="_blank" rel="noopener">元ネタを開く</a></div>
+</article>
+<article class="card" data-cat="パーソナルAI" data-text="muse 実利用事例20選（youtube）シシガミ／digital shiftパーソナルai『museならスシローで中トロも注文できる』。約17分の動画で実例20件：日本の使い方5、インスタ連携3、お金3、暮らしの用事4、仕事・副業3、うまくいかなかった例2。先回りと用事代行が機能し始める一方、確認なしの勝手な判断の失敗例も紹介。">
+  <div class="meta"><span class="no">56</span><span class="date">2026-11-03</span><span class="cat">パーソナルAI</span><span class="creator">シシガミ／Digital Shift</span></div>
+  <h2>Muse 実利用事例20選（YouTube）</h2>
+  <p>『Museならスシローで中トロも注文できる』。約17分の動画で実例20件：日本の使い方5、インスタ連携3、お金3、暮らしの用事4、仕事・副業3、うまくいかなかった例2。先回りと用事代行が機能し始める一方、確認なしの勝手な判断の失敗例も紹介。</p>
+  <div class="row"><a class="src" href="https://youtu.be/x_xBQZVsQTo" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.youtube.com/embed/x_xBQZVsQTo">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="デザイン" data-text="退屈なデザインの直し方 6原則@gg.designhubデザイン視覚階層の欠如が原因という主張を、ブランド作例のビフォーアフターで。階層（amazon）、コントラスト（mcdonald&#x27;s）、タイポ（nike）、余白＝近接（apple）、パターン崩し（red bull）、ビジュアル（levi&#x27;s）。指定5枚目は原則04の余白。learn-uiにノートあり。">
+  <div class="meta"><span class="no">57</span><span class="date">2026-11-04</span><span class="cat">デザイン</span><span class="creator">@gg.designhub</span></div>
+  <h2>退屈なデザインの直し方 6原則</h2>
+  <p>視覚階層の欠如が原因という主張を、ブランド作例のビフォーアフターで。階層（Amazon）、コントラスト（McDonald&#x27;s）、タイポ（Nike）、余白＝近接（Apple）、パターン崩し（Red Bull）、ビジュアル（Levi&#x27;s）。指定5枚目は原則04の余白。learn-uiにノートあり。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfTr86vkwrr/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfTr86vkwrr/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="デザイン" data-text="uiコンポーネント8種：ナビゲーションと構造@comunidaduxuiデザインスペイン語。accordion、breadcrumbs、sidebar、search bar、filter chips、modal、bottom sheet、cardを定義＋『いつ使うか／使わないか』で解説。平坦なサイトのパンくずは装飾にすぎない、必須手順にアコーディオンは不可、モーダルは最終手段。learn-uiにノートあり。">
+  <div class="meta"><span class="no">58</span><span class="date">2026-11-04</span><span class="cat">デザイン</span><span class="creator">@comunidaduxui</span></div>
+  <h2>UIコンポーネント8種：ナビゲーションと構造</h2>
+  <p>スペイン語。Accordion、Breadcrumbs、Sidebar、Search bar、Filter chips、Modal、Bottom sheet、Cardを定義＋『いつ使うか／使わないか』で解説。平坦なサイトのパンくずは装飾にすぎない、必須手順にアコーディオンは不可、モーダルは最終手段。learn-uiにノートあり。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfF3iCyghLV/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfF3iCyghLV/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="デザイン" data-text="デザイナーのブックマークサイト54@vamshi.workデザイン9カテゴリ×6サイト。inspiration（mobbin、godly等）、fonts、color（検証のwebaim含む）、icons、images &amp; motion、ui kits（shadcn/ui等）、learn ux、ai（claude skills、stitch、v0）、find clients。learn-uiにノートあり。">
+  <div class="meta"><span class="no">59</span><span class="date">2026-11-05</span><span class="cat">デザイン</span><span class="creator">@vamshi.work</span></div>
+  <h2>デザイナーのブックマークサイト54</h2>
+  <p>9カテゴリ×6サイト。Inspiration（Mobbin、Godly等）、Fonts、Color（検証のWebAIM含む）、Icons、Images &amp; motion、UI kits（shadcn/ui等）、Learn UX、AI（Claude Skills、Stitch、v0）、Find clients。learn-uiにノートあり。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfOi5-VH2IZ/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfOi5-VH2IZ/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="デザイン" data-text="illustrator ショートカット3種の比較@illustrator.blog_artistデザイン元は@graphicstation1の転載。スパイダーマンのマスクに網目模様を収める作業で比較：ctrl+7 クリッピングマスク、shift+m シェイプ形成ツール、shift+d 内側描画。ナレーションなしの画面録画。">
+  <div class="meta"><span class="no">60</span><span class="date">2026-11-05</span><span class="cat">デザイン</span><span class="creator">@illustrator.blog_artist</span></div>
+  <h2>Illustrator ショートカット3種の比較</h2>
+  <p>元は@graphicstation1の転載。スパイダーマンのマスクに網目模様を収める作業で比較：Ctrl+7 クリッピングマスク、Shift+M シェイプ形成ツール、Shift+D 内側描画。ナレーションなしの画面録画。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfVHSLGhKxi/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfVHSLGhKxi/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="画像生成" data-text="one prompt, endless art（1/3）@hyfee.visuals画像生成ケーララの日常写真をaiプロンプトでミニマルなポスターアートに変換するビフォーアフター。指定5枚目（最終枚）がプロンプト文面：4:5、シルエット・ポーズ・小物を保持、幾何学シェイプと半透明のすりガラス層で再構成、アイボリー背景、写実・カートゥーン調は禁止。">
+  <div class="meta"><span class="no">61</span><span class="date">2026-11-05</span><span class="cat">画像生成</span><span class="creator">@hyfee.visuals</span></div>
+  <h2>One Prompt, Endless Art（1/3）</h2>
+  <p>ケーララの日常写真をAIプロンプトでミニマルなポスターアートに変換するビフォーアフター。指定5枚目（最終枚）がプロンプト文面：4:5、シルエット・ポーズ・小物を保持、幾何学シェイプと半透明のすりガラス層で再構成、アイボリー背景、写実・カートゥーン調は禁止。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfCpn3_E9yG/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfCpn3_E9yG/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="デザイン" data-text="ボトムシートの演出6種 part 1@ui_motion_promptsデザインsnap points（定位置にスナップ）、drag to close、rubber band（上限超えで抵抗）、mini player、keyboard lift、floating card。操作への応答のパターン集。learn-uiにノートあり。">
+  <div class="meta"><span class="no">62</span><span class="date">2026-11-06</span><span class="cat">デザイン</span><span class="creator">@ui_motion_prompts</span></div>
+  <h2>ボトムシートの演出6種 Part 1</h2>
+  <p>Snap Points（定位置にスナップ）、Drag to Close、Rubber Band（上限超えで抵抗）、Mini Player、Keyboard Lift、Floating Card。操作への応答のパターン集。learn-uiにノートあり。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfWBEVCggI9/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfWBEVCggI9/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="デザイン" data-text="アコーディオンの演出6種 part 1@ui_motion_promptsデザインchevron rotate、plus to minus、one at a time（常に1つだけ開く排他型）、read more、card lift、nested。題材はfaq・配送詳細・設定。learn-uiにノートあり。">
+  <div class="meta"><span class="no">63</span><span class="date">2026-11-06</span><span class="cat">デザイン</span><span class="creator">@ui_motion_prompts</span></div>
+  <h2>アコーディオンの演出6種 Part 1</h2>
+  <p>Chevron Rotate、Plus to Minus、One at a Time（常に1つだけ開く排他型）、Read More、Card Lift、Nested。題材はFAQ・配送詳細・設定。learn-uiにノートあり。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfWqRI0FKvC/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfWqRI0FKvC/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="デザイン" data-text="タブの切り替え part 5@ui_motion_promptsデザインタブバーのアニメーション定番6種を鉛筆描き風の白黒ライン画で。sliding pill、liquid bulge、floating notch、icon fill、expanding label、bubble float。">
+  <div class="meta"><span class="no">64</span><span class="date">2026-11-06</span><span class="cat">デザイン</span><span class="creator">@ui_motion_prompts</span></div>
+  <h2>タブの切り替え PART 5</h2>
+  <p>タブバーのアニメーション定番6種を鉛筆描き風の白黒ライン画で。SLIDING PILL、LIQUID BULGE、FLOATING NOTCH、ICON FILL、EXPANDING LABEL、BUBBLE FLOAT。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfWVqU_j_7L/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfWVqU_j_7L/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="写真編集" data-text="too much teal? 水中写真の色戻し5ステップ@number_3_0_2写真編集ティールに寄りすぎた水中写真（フリーダイバーの空撮）をlightroomで直す。crop→ダイバーをマスクして肌に温かみを戻す→砂の光と質感→周囲の水を暗くして奥行き→カーブ／グレーディング／hslでアクアとブルーを分離。">
+  <div class="meta"><span class="no">65</span><span class="date">2026-11-06</span><span class="cat">写真編集</span><span class="creator">@number_3_0_2</span></div>
+  <h2>TOO MUCH TEAL? 水中写真の色戻し5ステップ</h2>
+  <p>ティールに寄りすぎた水中写真（フリーダイバーの空撮）をLightroomで直す。Crop→ダイバーをマスクして肌に温かみを戻す→砂の光と質感→周囲の水を暗くして奥行き→カーブ／グレーディング／HSLでアクアとブルーを分離。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfVfmDizLi_/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfVfmDizLi_/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="音楽" data-text="今、ジャズが面白い：ezra collective@the.note_journal音楽ロンドンの5人組。ジャズを軸にアフロビート、レゲエ、ヒップホップを混ぜた踊れるグルーヴ。入門におすすめの3曲はvictory dance、no confusion、god gave me feet for dancing。">
+  <div class="meta"><span class="no">66</span><span class="date">2026-11-06</span><span class="cat">音楽</span><span class="creator">@the.note_journal</span></div>
+  <h2>今、ジャズが面白い：Ezra Collective</h2>
+  <p>ロンドンの5人組。ジャズを軸にアフロビート、レゲエ、ヒップホップを混ぜた踊れるグルーヴ。入門におすすめの3曲はVictory Dance、No Confusion、God Gave Me Feet For Dancing。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfMeO-USeTC/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfMeO-USeTC/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="音楽" data-text="carl craig『more songs about food and revolutionary art』@1825desu音楽kyoso musicシリーズ。デトロイト・テクノの重鎮の1997年の名盤。特に推すのは収録曲『at les』。機械的なリズムにジャズやソウルの感覚が入り、冷たい電子音なのに温かいと評する。">
+  <div class="meta"><span class="no">67</span><span class="date">2026-11-06</span><span class="cat">音楽</span><span class="creator">@1825desu</span></div>
+  <h2>Carl Craig『More Songs About Food and Revolutionary Art』</h2>
+  <p>Kyoso Musicシリーズ。デトロイト・テクノの重鎮の1997年の名盤。特に推すのは収録曲『At Les』。機械的なリズムにジャズやソウルの感覚が入り、冷たい電子音なのに温かいと評する。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfTfiLpz25v/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfTfiLpz25v/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="デザイン" data-text="webサイトの7レイアウト@comunidaduxuiデザインほぼ全てのサイトの骨格になる7型：z pattern（単一目的のlp）、f pattern（ブログ・検索結果）、split screen（ログイン）、card layout（ストア・カタログ）、bento（ポートフォリオ）、single column（記事）、sidebar（ダッシュボード）。主張は『uiの成功は予測可能に誘導すること』。">
+  <div class="meta"><span class="no">68</span><span class="date">2026-11-06</span><span class="cat">デザイン</span><span class="creator">@comunidaduxui</span></div>
+  <h2>Webサイトの7レイアウト</h2>
+  <p>ほぼ全てのサイトの骨格になる7型：Z pattern（単一目的のLP）、F pattern（ブログ・検索結果）、Split screen（ログイン）、Card layout（ストア・カタログ）、Bento（ポートフォリオ）、Single column（記事）、Sidebar（ダッシュボード）。主張は『UIの成功は予測可能に誘導すること』。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfIWRmKlX-g/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfIWRmKlX-g/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="動画" data-text="コードベース動画ツール top5@ai.asap.kr動画オープンソースのコード生成動画ツール：manim（数学アニメーション、mit）、hyperframes（html→mp4、apache-2.0）、remotion（4人以上の企業は有料ライセンス）、motion canvas（typescript製、mit）、revideo（サーバー側の大量レンダリング、mit）。スター数は投稿内の表記。">
+  <div class="meta"><span class="no">69</span><span class="date">2026-11-06</span><span class="cat">動画</span><span class="creator">@ai.asap.kr</span></div>
+  <h2>コードベース動画ツール TOP5</h2>
+  <p>オープンソースのコード生成動画ツール：Manim（数学アニメーション、MIT）、HyperFrames（HTML→MP4、Apache-2.0）、Remotion（4人以上の企業は有料ライセンス）、Motion Canvas（TypeScript製、MIT）、Revideo（サーバー側の大量レンダリング、MIT）。スター数は投稿内の表記。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfZjEomD8lZ/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfZjEomD8lZ/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="AIニュース" data-text="chatgpt images 2.6 デモ集@foorce.studioaiニュースimages 2.6の実演中心の紹介（ニュース本体は@oz.k.ishikawaの回と重複）。踊る動物のgif、スケッチ→フクロウのgif、2.5と2.6の速度比較、赤髪の騎士の一貫性、ピクセルアートの運転手等。新情報はほぼなし。">
+  <div class="meta"><span class="no">70</span><span class="date">2026-11-07</span><span class="cat">AIニュース</span><span class="creator">@foorce.studio</span></div>
+  <h2>ChatGPT Images 2.6 デモ集</h2>
+  <p>Images 2.6の実演中心の紹介（ニュース本体は@oz.k.ishikawaの回と重複）。踊る動物のGIF、スケッチ→フクロウのGIF、2.5と2.6の速度比較、赤髪の騎士の一貫性、ピクセルアートの運転手等。新情報はほぼなし。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfYyOoPkykZ/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfYyOoPkykZ/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="用語集" data-text="30秒図解 vui（音声ui）@bitkun_it用語集ビットくんのit用語シリーズ。vui＝音声で操作する窓口。流れは認識→意図理解→実行→音声で応答。強みはハンズフリー、弱みは騒音下の誤認識で、確認プロンプトや取り消しの設計が要る。">
+  <div class="meta"><span class="no">71</span><span class="date">2026-11-07</span><span class="cat">用語集</span><span class="creator">@bitkun_it</span></div>
+  <h2>30秒図解 VUI（音声UI）</h2>
+  <p>ビットくんのIT用語シリーズ。VUI＝音声で操作する窓口。流れは認識→意図理解→実行→音声で応答。強みはハンズフリー、弱みは騒音下の誤認識で、確認プロンプトや取り消しの設計が要る。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfZ1pY8tyYH/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfZ1pY8tyYH/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="デザイン" data-text="claudeをデザイナーにする10コード@charliehillsデザイン/cheatsheet、/roadmap、/steps、/pyramid、/iceberg、/bento、/orgchart、/toolkit、/versus、/decision。自分の最良投稿を先に読ませ、ブランド通りに図解を描く仕組み。claude codeの標準コマンドではなく、彼の有料ai os（linkedin向け）内のコマンド。">
+  <div class="meta"><span class="no">72</span><span class="date">2026-11-07</span><span class="cat">デザイン</span><span class="creator">@charliehills</span></div>
+  <h2>Claudeをデザイナーにする10コード</h2>
+  <p>/cheatsheet、/roadmap、/steps、/pyramid、/iceberg、/bento、/orgchart、/toolkit、/versus、/decision。自分の最良投稿を先に読ませ、ブランド通りに図解を描く仕組み。Claude Codeの標準コマンドではなく、彼の有料AI OS（LinkedIn向け）内のコマンド。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfUy6nEEUY0/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfUy6nEEUY0/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="動画" data-text="claude codeで動画編集する8 skill（gut1n版）@gut1n動画ポルトガル語のカルーセル。video-use（詰まりカット・字幕・色調整）、ffmpeg-skill、herk edit kit（リール／shorts用15 skill）、claude-gif、claude-motion-design、remotion skills（公式）、video-editor-skills（davinci resolve内で初稿カット）、openmontage（台本→ナレーション→音楽→字幕→完成）。@maurys_alvarez_iaの10選と大幅に重複。">
+  <div class="meta"><span class="no">73</span><span class="date">2026-11-07</span><span class="cat">動画</span><span class="creator">@gut1n</span></div>
+  <h2>Claude Codeで動画編集する8 Skill（gut1n版）</h2>
+  <p>ポルトガル語のカルーセル。video-use（詰まりカット・字幕・色調整）、ffmpeg-skill、Herk Edit Kit（リール／Shorts用15 Skill）、claude-gif、claude-motion-design、Remotion Skills（公式）、video-editor-skills（DaVinci Resolve内で初稿カット）、OpenMontage（台本→ナレーション→音楽→字幕→完成）。@maurys_alvarez_iaの10選と大幅に重複。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfWpPlxGmco/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfWpPlxGmco/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="AIツール" data-text="runable：一文から作るai制作プラットフォーム@riki.bossoaiツールai制作プラットフォームrunableの広告リール。コーヒー店のサイト（サブドメインに公開可）、オンラインストアのローンチカルーセル、ピッチ資料『lendly』、ランニングクラブのアプリをデモ。締めの画面で事業はデモだと開示。『runable』コメントでリンク配布（50%オフ言及）。">
+  <div class="meta"><span class="no">74</span><span class="date">2026-11-07</span><span class="cat">AIツール</span><span class="creator">@riki.bosso</span></div>
+  <h2>Runable：一文から作るAI制作プラットフォーム</h2>
+  <p>AI制作プラットフォームRunableの広告リール。コーヒー店のサイト（サブドメインに公開可）、オンラインストアのローンチカルーセル、ピッチ資料『Lendly』、ランニングクラブのアプリをデモ。締めの画面で事業はデモだと開示。『Runable』コメントでリンク配布（50%オフ言及）。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfXigdKRZXG/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfXigdKRZXG/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="AIツール" data-text="deepseek harness『creator mode』@ai.asap.kraiツールdeepseekのオープンソース（mit）エージェントアプリに、会話でプラグインを作って組み込むcreator mode（2026-11-02公開、実在を確認済み）。公式デモプロンプト7本：退勤カウントダウン、ポスタースタジオ、transformer 3d実験室、ピクセルアートの着せ替え、3dランドマーク等。生成プラグインは通常のプログラムと同じ権限で動く点に注意。">
+  <div class="meta"><span class="no">75</span><span class="date">2026-11-07</span><span class="cat">AIツール</span><span class="creator">@ai.asap.kr</span></div>
+  <h2>DeepSeek Harness『Creator Mode』</h2>
+  <p>DeepSeekのオープンソース（MIT）エージェントアプリに、会話でプラグインを作って組み込むCreator Mode（2026-11-02公開、実在を確認済み）。公式デモプロンプト7本：退勤カウントダウン、ポスタースタジオ、Transformer 3D実験室、ピクセルアートの着せ替え、3Dランドマーク等。生成プラグインは通常のプログラムと同じ権限で動く点に注意。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfS8Qwkjy_A/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfS8Qwkjy_A/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="AIニュース" data-text="claude『personal finance』発表@claudecodecafeaiニュースanthropic発表（2026-11-05、実在を確認済み）の日本語解説。銀行・カード口座をplaid経由で連携し、残高と最大24か月分の取引を見て相談できる。読み取り専用で資金移動や運用は不可。米国でpro／max／ultra向けベータ、日本での提供時期は未定。">
+  <div class="meta"><span class="no">76</span><span class="date">2026-11-07</span><span class="cat">AIニュース</span><span class="creator">@claudecodecafe</span></div>
+  <h2>Claude『Personal Finance』発表</h2>
+  <p>Anthropic発表（2026-11-05、実在を確認済み）の日本語解説。銀行・カード口座をPlaid経由で連携し、残高と最大24か月分の取引を見て相談できる。読み取り専用で資金移動や運用は不可。米国でPro／Max／Ultra向けベータ、日本での提供時期は未定。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfaxiKTHNKd/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfaxiKTHNKd/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="GitHub" data-text="github週間ランキング 10位→6位（11月第1週）@githubtrend_by_aipromatchgithub週間スター増加順。10位 obra/superpowers（tdd／yagniの開発フレームワーク）、9位 ziwei-doushu（紫微斗数のoss）、8位 claude-code-game-studios（エージェント49＋skill74でゲーム制作自動化）、7位 openmausbot（専用vm内で動く自律自動化）、6位 nutlope/hallmark（aiっぽさ対策のuiテーマ50種）。数字は動画内の表記。">
+  <div class="meta"><span class="no">77</span><span class="date">2026-11-08</span><span class="cat">GitHub</span><span class="creator">@githubtrend_by_aipromatch</span></div>
+  <h2>GitHub週間ランキング 10位→6位（11月第1週）</h2>
+  <p>週間スター増加順。10位 obra/superpowers（TDD／YAGNIの開発フレームワーク）、9位 ziwei-doushu（紫微斗数のOSS）、8位 Claude-Code-Game-Studios（エージェント49＋Skill74でゲーム制作自動化）、7位 OpenMausBot（専用VM内で動く自律自動化）、6位 Nutlope/hallmark（AIっぽさ対策のUIテーマ50種）。数字は動画内の表記。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfdOyp3OdJc/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfdOyp3OdJc/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="デザイン" data-text="dashboard v22（グラスモーフィズム）@code.xr（arastoo）デザインreact製ダッシュボードuiのショーケース。チーム表示・統計カウンター・通知・プロフィール画面・saved for later。実装はreact＋framer-motion＋lucide-react。キャプションはブルー＆ホワイト表記だが実際の画面は淡グリーン基調。コメント欄では『アニメーションが重く実務向きでない』という批判も。">
+  <div class="meta"><span class="no">78</span><span class="date">2026-11-08</span><span class="cat">デザイン</span><span class="creator">@code.xr（Arastoo）</span></div>
+  <h2>Dashboard V22（グラスモーフィズム）</h2>
+  <p>React製ダッシュボードUIのショーケース。チーム表示・統計カウンター・通知・プロフィール画面・Saved for later。実装はReact＋framer-motion＋lucide-react。キャプションはブルー＆ホワイト表記だが実際の画面は淡グリーン基調。コメント欄では『アニメーションが重く実務向きでない』という批判も。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfcQ2TrTbGV/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfcQ2TrTbGV/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="AIニュース" data-text="anthropic『エージェントメモリの設計』研究@ai.asap.kraiニュース公式記事『the components of agent memory』（2026-11-06、実在を確認済み）の解説。メモリは4層（ログ→メモ→wiki等の表現→毎回読み込まれる層）、セッション後に記録と照合して誤りを直す『ドリーミング』が要。cl-benchでopus 5.5が0.655→0.838。『失敗だけ記録しろ』は逆効果（−0.234）。並行エージェントの書き込みはページを分けると事実の生存が57/57に。">
+  <div class="meta"><span class="no">79</span><span class="date">2026-11-08</span><span class="cat">AIニュース</span><span class="creator">@ai.asap.kr</span></div>
+  <h2>Anthropic『エージェントメモリの設計』研究</h2>
+  <p>公式記事『The components of agent memory』（2026-11-06、実在を確認済み）の解説。メモリは4層（ログ→メモ→wiki等の表現→毎回読み込まれる層）、セッション後に記録と照合して誤りを直す『ドリーミング』が要。CL-BenchでOpus 5.5が0.655→0.838。『失敗だけ記録しろ』は逆効果（−0.234）。並行エージェントの書き込みはページを分けると事実の生存が57/57に。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/p/DfdWN35j1Dx/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/p/DfdWN35j1Dx/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+<article class="card" data-cat="デザイン" data-text="glassy dashboard v24@code.xr（arastoo）デザインdashboard v22の続編。今回はキャプション通りブルー×ホワイトのグラスモーフィズム。完了率94%／進行中プロジェクト128／収益$42,500／稼働率99.96%の指標カード、左サイドバーのナビ、analytics画面の収益チャートまで。キャプションはv22表記だが動画内のタイトルはv24。">
+  <div class="meta"><span class="no">80</span><span class="date">2026-11-08</span><span class="cat">デザイン</span><span class="creator">@code.xr（Arastoo）</span></div>
+  <h2>Glassy Dashboard V24</h2>
+  <p>Dashboard V22の続編。今回はキャプション通りブルー×ホワイトのグラスモーフィズム。完了率94%／進行中プロジェクト128／収益$42,500／稼働率99.96%の指標カード、左サイドバーのナビ、Analytics画面の収益チャートまで。キャプションはV22表記だが動画内のタイトルはV24。</p>
+  <div class="row"><a class="src" href="https://www.instagram.com/reel/DfeTS2Jzcgx/" target="_blank" rel="noopener">元ネタを開く</a><button class="embedbtn" data-embed="https://www.instagram.com/reel/DfeTS2Jzcgx/embed">📷 画像・投稿を表示</button><div class="embedbox"></div></div>
+</article>
+</main>
+<footer>画像はInstagram公式の埋め込み（embed）で表示します。元の画像ファイルを複製・保存したものではありません。読み込めない場合は「元ネタをInstagramで開く」からご覧ください。</footer>
+<script>
+const cards=[...document.querySelectorAll('.card')];
+const q=document.getElementById('q'), cat=document.getElementById('cat'), cnt=document.getElementById('count');
+function apply(){
+  let n=0;
+  cards.forEach(c=>{
+    const okQ=!q.value || c.dataset.text.includes(q.value.toLowerCase());
+    const okC=!cat.value || c.dataset.cat===cat.value;
+    const show=okQ&&okC; c.style.display=show?'':'none'; if(show)n++;
+  });
+  cnt.textContent=n+'件表示中';
+}
+q.addEventListener('input',apply); cat.addEventListener('change',apply); apply();
+document.querySelectorAll('.embedbtn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const box=b.nextElementSibling;
+    if(box.innerHTML){box.innerHTML=''; b.textContent='📷 画像・投稿を表示'; return;}
+    const f=document.createElement('iframe');
+    f.src=b.dataset.embed; f.loading='lazy'; f.allowTransparency='true'; f.setAttribute('scrolling','no');
+    box.appendChild(f); b.textContent='閉じる';
+  });
+});
+</script>
+</body></html>

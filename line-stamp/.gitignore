@@ -1,0 +1,16 @@
+# 作り直せる ZIP と、Python の一時ファイル
+*.zip
+__pycache__/
+
+# 申請手順のスクリーンショットは、note の記事で使ったものだけを公開する。
+# 使っていないものは、手元にだけ置く。
+article/screenshots/*
+!article/screenshots/04-create-type.png
+!article/screenshots/05-form-details.png
+!article/screenshots/09-form-filled.png
+!article/screenshots/12-image-uploaded.png
+!article/screenshots/14-price.png
+!article/screenshots/16-requested.png
+!article/screenshots/17-approved-line-notice.png
+!article/screenshots/17-approved-list.png
+!article/screenshots/18-approved-detail.png

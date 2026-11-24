@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>note貼り付け用</title>
+<style>
+body{font-family:"Yu Gothic",Meiryo,sans-serif;max-width:760px;margin:24px auto;padding:0 16px;line-height:1.9;color:#222}
+.panel{background:#f4f6f8;border:1px solid #d8dde2;border-radius:8px;padding:12px 16px;margin-bottom:20px}
+.panel h4{margin:0 0 6px;font-size:14px}
+button{font-size:14px;padding:6px 14px;border:1px solid #888;border-radius:6px;background:#fff;cursor:pointer;margin-right:6px}
+#msg{color:#0a7d33;font-size:13px;margin-left:6px}
+pre{background:#f6f8fa;padding:12px;overflow-x:auto;border-radius:6px}
+blockquote{border-left:4px solid #ccc;margin-left:0;padding-left:14px;color:#444}
+</style>
+</head>
+<body>
+<div class="panel"><h4>1. タイトル</h4><div id="title">【AIスキル一期一会】さくら・Gmail・outlookをまとめて扱う自作MCP「mail-mcp」を作ってみた</div>
+<p><button onclick="copyText('title')">タイトルをコピー</button><span id="msg"></span></p></div>
+<div class="panel"><h4>2. 本文</h4>
+<p><button onclick="copyRich('article')">本文をコピー</button> 下の本文を範囲選択してコピーしても同じです。</p></div>
+<div class="panel"><h4>3. ハッシュタグ</h4><div id="tags"></div>
+<p><button onclick="copyText('tags')">タグをコピー</button></p></div>
+<hr>
+<div id="article">
+<p>さくらのVPS、Gmail、outlook.com。私のメールは、3つのアカウントに分かれています。AIにメールを見てもらおうとすると、アカウントごとに別の設定が要ります。</p>
+<p>この記事では、3つをまとめて管理できる自作のMCPサーバー「mail-mcp」の作り方と、実際にハマったところをまとめます。フォルダ名も認証方法もアカウントごとに違い、つなぐだけで4回つまずきました。</p>
+<h2>🤔 なぜ複数のメールアカウントをまとめたいか</h2>
+<p>私のメールは、用途ごとに3つのアカウントに分かれています。さくらのVPSで作った独自ドメインのメール、Gmail、outlook.comです。</p>
+<p>アカウントが分かれていると、AIに頼むときも、アカウントごとにツールを入れて、設定して、呼び分けることになります。</p>
+<p>そこで、1つのMCPサーバーを窓口にして、「今日届いたメールを全部見せて」と一度で頼める形にしたいと考えました。</p>
+<h2>🛠 mail-mcpとは？</h2>
+<p>GitHubで公開している、複数のメールアカウントをまとめて管理するための自作ツールです。IMAPでメールを読むMCPサーバーで、本体のコードは約900行（Python）です。</p>
+<p><a href="https://github.com/om10cg7/learn-ai-skills/tree/main/mail-mcp">https://github.com/om10cg7/learn-ai-skills/tree/main/mail-mcp</a></p>
+<p>2026年11月時点の内容です。ツールは11個あります。</p>
+<p><strong>読む</strong></p>
+<ul><li>アカウント一覧、フォルダ一覧、検索、本文の取得</li><li>検索は、アカウントを指定しなければ全アカウントを横断する</li><li>1つのアカウントが失敗しても、残りの結果は返す</li></ul>
+<p><strong>下書き</strong></p>
+<ul><li>返信の下書き、新規の下書き、一覧、削除</li><li>下書きは、各アカウントの下書きフォルダに保存する</li></ul>
+<p><strong>整理</strong></p>
+<ul><li>既読にする、フォルダを移す、ゴミ箱へ移す</li></ul>
+<p>アカウントごとに、下書きとゴミ箱のフォルダ名が違います。サーバーが自動で見分けるので、AIには同じ言い方で頼めます。実際に接続を確かめたときの結果は、次のとおりです。</p>
+<ul><li>さくらのVPS: <code>INBOX.Draft</code> と <code>INBOX.Trash</code></li><li>Gmail: <code>[Gmail]/下書き</code> と <code>[Gmail]/ゴミ箱</code></li><li>outlook.com: <code>Drafts</code> と <code>Deleted</code></li></ul>
+<p><strong>送信機能は付けていません</strong></p>
+<p>AIが誤ってメールを送る事故と、受信メールの中の指示にAIが従う事故を避けるためです。実際に、さくらのアドレスには、国税庁や還付金などをかたる不審に見えるメールが、1日で7通届きました。</p>
+<ul><li>送信機能（SMTP）は作っていない。保存するのは下書きまで</li><li>削除は、ゴミ箱へ移すだけ。完全に消す機能はない</li></ul>
+<p>自作のツールなので、使うときは自己責任でお願いします。</p>
+<h2>🚀 導入手順</h2>
+<h3>環境</h3>
+<ul><li>OS: Windows 11</li><li>Docker Desktop（Docker 29.8.2）</li><li>Python 3.12、MCP Python SDK 2.x（コンテナの中で動きます）</li><li>つないだクライアント: Antigravity CLI（<code>agy</code>）</li></ul>
+<h3>1. リポジトリを取得して、ビルドする</h3>
+<pre><code>git clone https://github.com/om10cg7/learn-ai-skills.git
+cd learn-ai-skills\mail-mcp
+copy .env.example .env
+copy config\accounts.example.yaml config\accounts.yaml
+docker compose build</code></pre>
+<p><code>.env</code> と <code>config\accounts.yaml</code> は、Gitに入れない設定になっています。パスワードは、<code>accounts.yaml</code> ではなく <code>.env</code> に書きます。</p>
+<h3>2. 3つのアカウントを設定する</h3>
+<p>アカウントごとに、認証の方法が違います。</p>
+<p><strong>さくらのVPS（パスワード）</strong></p>
+<ul><li>IMAPの993番ポートを、パケットフィルターとOSのファイアウォールの両方で開ける</li><li>パスワードは、<code>.env</code> の <code>SAKURA_PASSWORD</code> に書く</li></ul>
+<p><strong>Gmail（アプリパスワード）</strong></p>
+<ul><li>2段階認証を有効にして、アプリパスワードを発行する</li><li>ふだんのパスワードは、IMAPでは使えない</li></ul>
+<p><strong>outlook.com（OAuth2）</strong></p>
+<ul><li>MicrosoftのEntra IDに、アプリを登録する</li><li>サポートするアカウントの種類は「個人用アカウントのみ」にして、公開クライアントフローを許可する</li><li>手順書にあった「APIのアクセス許可の追加」は、不要だった（ログイン時の同意で付与された）</li></ul>
+<p>outlook.comだけは、初回にログインが要ります。</p>
+<pre><code>docker compose run --rm mail-mcp auth outlook</code></pre>
+<p>画面に出たURLをブラウザで開き、表示されたコードを入力します。「ログイン成功」と出れば完了です。</p>
+<h3>3. 接続を確認する</h3>
+<pre><code>docker compose run --rm mail-mcp check</code></pre>
+<p>アカウントごとに、次のような行が出れば成功です。</p>
+<pre><code>OK   sakura   フォルダ 5 件 / 下書き=INBOX.Draft / ゴミ箱=INBOX.Trash</code></pre>
+<p>3つとも「OK」になってから、次に進みます。</p>
+<h3>4. クライアントに登録する</h3>
+<p>Antigravity CLIには、次のコマンドで登録しました。<code>&lt;フォルダ&gt;</code> は、<code>mail-mcp</code> を置いた場所です。</p>
+<pre><code>agy mcp add mail -- docker run -i --rm -e TZ=Asia/Tokyo --env-file &lt;フォルダ&gt;\.env -v &lt;フォルダ&gt;\config:/config:ro -v &lt;フォルダ&gt;\tokens:/tokens mail-mcp:latest</code></pre>
+<p>パスに空白や日本語が入っていても、設定ファイルには、引数ごとに正しく分かれて保存されました。</p>
+<p>Claude Desktopにも同じ内容を書けますが、設定ファイルの場所に注意が要ります（次の節で書きます）。再起動するまで、設定は読み込まれません。</p>
+<h2>⚠️ ハマったところ</h2>
+<h3>Claude Desktopに「mail」が出ない</h3>
+<p>設定ファイルに <code>mcpServers</code> を書いて再起動したのに、ツールの一覧にメールが出ませんでした。</p>
+<p>原因は、設定ファイルの場所の取り違えです。私の環境はWindowsのストア版で、似たフォルダが2つあります。アプリが実際に読んでいたのは、最初に書いた場所とは別のフォルダでした。</p>
+<pre><code>C:\Users\&lt;ユーザー名&gt;\AppData\Local\Claude-Data\claude_&lt;ID&gt;\claude_desktop_config.json</code></pre>
+<p>私は、アプリが自動で書き込む設定が入っているほうが、実際に使われているファイルだと判断し、そこに <code>mcpServers</code> を足しました。足したあとの画面での確認は、まだ終わっていません。</p>
+<h3>docker composeでは動くのに、docker runだとさくらだけ失敗する</h3>
+<p><code>check</code> は3つともOKだったのに、<code>docker run</code> で起動すると、さくらだけログインに失敗しました。</p>
+<pre><code>MailboxLoginError: Response status "OK" expected, but "NO" received. Data: [b'Login failed.']</code></pre>
+<p>原因は、<code>.env</code> の <code>SAKURA_PASSWORD=</code> の直後にあった、半角スペース1つです。<code>docker compose</code> は無視しますが、<code>docker run --env-file</code> は、そのまま渡していました。</p>
+<p>スペースを消して直りました。クライアントは <code>docker run</code> で起動するため、<code>check</code> が通っても、この違いには気づけません。</p>
+<h3>テスト用サーバーで、本文の取得が失敗する</h3>
+<p>テスト用のメールサーバー（GreenMail）に対して、メール本文の取得が失敗しました。</p>
+<pre><code>imaplib.IMAP4.error: UID command error: BAD [b'Search command not supported']</code></pre>
+<p>原因は、検索のたびに文字コードを指定していたことです。GreenMailは、その指定を受け付けません。英数字だけの検索では文字コードを指定せず、日本語を含むときだけ <code>UTF-8</code> を指定するように直しました。本文の取得は、検索をやめて、UIDで直接取るようにしました。</p>
+<h3>outlook.comのログインが「AADSTS70016」で失敗する</h3>
+<p>デバイスコードでのログインが、次のエラーで2回失敗しました。</p>
+<pre><code>AADSTS70016: The provided request has not yet been authorized by the user. The user must input their code.</code></pre>
+<p>原因は、コードの期限切れです。私の環境では、コードを出してから約15分で切れました。コードを出したあと、ブラウザを開くのが間に合っていませんでした。</p>
+<p>先にブラウザを開いて、すぐ入力できる状態でコードを出すと、3回目で通りました。</p>
+<h2>💻 実際に使ってみる</h2>
+<h3>再起動して、確認する</h3>
+<p><code>agy</code> に登録したあと、次のように頼みました。</p>
+<blockquote><p>mail の list_accounts を実行して</p></blockquote>
+<p>Antigravity CLIは <code>list_accounts</code> を呼び、設定した3つのアカウントを返しました。</p>
+<ul><li><code>sakura</code></li><li><code>gmail</code></li><li><code>outlook</code></li></ul>
+<h3>全アカウントを横断して検索する</h3>
+<p>アカウントを指定せずに、検索を実行しました。3つすべてから、結果が返りました。</p>
+<p>今日（2026年11月3日）届いたメールの件名は、3アカウントを合わせて、24件を一覧にできました。内訳は次のとおりです。</p>
+<ul><li>さくら: 7件</li><li>Gmail: 10件</li><li>outlook.com: 7件</li></ul>
+<p>なお、この横断検索は、動作確認用に自作したスクリプトで行いました。Antigravity CLIの会話から呼ぶ形では、<code>list_accounts</code> だけ確かめています。</p>
+<h3>まだ確かめていないこと</h3>
+<ul><li>Claude Desktopの画面から呼び出す確認は、終わっていません</li><li>検索にかかる時間は、計っていないので、他の方法と比較できません</li></ul>
+<h2>📝 まとめ</h2>
+<ul><li>複数のメールアカウントを、1つのMCPサーバーで、同じ頼み方で扱えるようになった</li><li>アカウントごとに違う下書きとゴミ箱のフォルダ名は、サーバーが自動で見分ける</li><li>送信機能は付けず、下書きの保存とゴミ箱への移動までに絞った</li><li>outlook.comは、OAuth2の登録とデバイスコードでのログインで、APIの許可を足さずにつながった</li><li><code>check</code> が通っても <code>docker run</code> で失敗することがあるので、起動と同じ方法で確かめる</li></ul>
+<p>👉 次回は、Gmailをアプリパスワードから、OAuth2に切り替えます。</p>
+<p>※ 2026年11月時点の内容です。私の環境（Windows 11）での結果で、自作のツールです。Claude Desktopの画面からの確認は、終わっていません。</p>
+</div>
+<script>
+function done(m){var e=document.getElementById('msg');e.textContent=m;setTimeout(function(){e.textContent=''},2500)}
+function copyText(id){navigator.clipboard.writeText(document.getElementById(id).innerText).then(function(){done('コピーしました')})}
+function copyRich(id){var el=document.getElementById(id);var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);var ok=document.execCommand('copy');s.removeAllRanges();done(ok?'本文をコピーしました':'失敗。範囲選択してCtrl+Cしてください')}
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<p>自分のアプリのコードを Claude Code に読ませるたびに、grep やファイルの総当たりで、トークンも時間もかかるのが気になっていました。</p>
+<p>この記事では、コードを知識グラフにする「Graphify」を入れて、自作のバスマップアプリ（194ファイル）を解析するところまでをまとめます。API キーは要らず、<code>Settings</code> クラスを変えたときの影響範囲を、grep なしで洗い出せました。</p>
+<h2>🤔 なぜ Graphify を試したいか</h2>
+<p>Claude Code に「この関数を変えると、どこに影響する？」と聞くと、まず grep とファイルの読み込みが何十回も走ります。結果が出る前に、時間とトークンが減っていきます。</p>
+<p>Graphify は、コードを解析して、ファイル・関数・クラスのつながりをグラフにしてくれるツールです。そのグラフを先に見れば、読むべきファイルを絞れるはずだと考えました。</p>
+<p>解析の対象は、自作の広島バスマップです。アプリ自体は、前に記事にしています。</p>
+<p><a href="https://note.com/om10cg72/n/n7f5c18dd7d46">https://note.com/om10cg72/n/n7f5c18dd7d46</a></p>
+<p>今回は、Graphify の使い方を一通り試すことが目的です。成果物を作る記事ではなく、学習の記録です。</p>
+<h2>🛠 Graphify とは？</h2>
+<p>コードベースを解析して、知識グラフにするツールです。PyPI で公開されていて、<code>pip</code> か <code>uv</code> で入れます。</p>
+<p><strong>解析でできること</strong></p>
+<ul><li>コードの解析は、ローカルの tree-sitter（構文木）だけで行う。LLM を使わないので、API キーは要らない</li><li>つながりが多いノード（神ノード）のランキングと、意外な依存を <code>GRAPH_REPORT.md</code> にまとめる</li><li><code>graph.html</code> で、コミュニティごとに色分けしたグラフを見られる</li><li>Obsidian 用のノートを出力できる</li></ul>
+<p><strong>グラフを調べるコマンド</strong></p>
+<ul><li><code>graphify explain "名前"</code>：ノードとつながりの説明</li><li><code>graphify path "A" "B"</code>：2つのノードの最短経路</li></ul>
+<p>この節は、<code>graphify --help</code> の表示と、解説記事に基づきます。バージョンは 0.9.101 です。</p>
+<p>注意点が1つあります。パッケージ名は <code>graphifyy</code>（末尾の y が 2 つ）で、実行コマンドは <code>graphify</code>（y が 1 つ）です。間違えやすいので、気をつけてください。</p>
+<h2>🚀 導入手順</h2>
+<p><strong>環境</strong></p>
+<ul><li>OS：Windows 11 Pro</li><li>Claude Code：2.1.251</li><li>uv：0.12.23</li><li>Python：3.11.9</li><li>Graphify：0.9.101</li></ul>
+<p><strong>1. Graphify を入れる</strong></p>
+<pre><code>uv tool install graphifyy
+graphify --version</code></pre>
+<p>「graphify 0.9.101」と出れば成功です。実行ファイルは <code>graphify</code> と <code>graphify-mcp</code> の2つが入りました。</p>
+<p><strong>2. Claude Code にスキルを登録する</strong></p>
+<pre><code>graphify install</code></pre>
+<p><code>~/.claude/skills/graphify/</code> にスキルが作られ、Claude Code で <code>/graphify</code> が使えるようになります。</p>
+<p><strong>3. プロジェクトを解析する</strong></p>
+<p>解説記事では、Claude Code の中で <code>/graphify . --code-only --obsidian</code> を打つ方法が紹介されています。今回は、同じ解析を CLI から実行しました。</p>
+<pre><code>cd （プロジェクトのフォルダ）
+graphify update .
+graphify export obsidian --dir graphify-out/obsidian</code></pre>
+<p><code>graphify update .</code> が、コードだけを解析するコマンドです。<code>.gitignore</code> に書いてある <code>.venv</code> や <code>.env</code> は、対象から外れました。</p>
+<p>スキル経由の <code>/graphify</code> は、まだ試していません。</p>
+<h2>⚠️ ハマったところ</h2>
+<p><strong>グローバルの CLAUDE.md に、3行が足されていた</strong></p>
+<p><code>graphify install</code> は、スキルを作るだけではありませんでした。<code>~/.claude/CLAUDE.md</code> の末尾にも、次のような3行を自動で書き足していました。</p>
+<pre><code># graphify
+- **graphify** (`~/.claude/skills/graphify/SKILL.md`) - any input to knowledge graph. Trigger: `/graphify`
+When the user types `/graphify`, use the installed graphify skill or instructions before doing anything else.</code></pre>
+<p>既存の記述は変わっていませんでした。ただ、グローバル設定に触られるので、インストールのあとに中身を見ておくことをおすすめします。</p>
+<p><strong>経路を調べると「経路なし」になる</strong></p>
+<p><code>graphify path "Settings" "create_web_app()"</code> を実行すると、こう出ました。</p>
+<pre><code>No directed path found between 'Settings' and 'create_web_app()'. Re-run with --undirected to search ignoring edge direction.</code></pre>
+<p>原因は、辺の向きです。このグラフでは、依存する側から <code>Settings</code> へ向かう向きで辺が張られています。<code>Settings</code> から <code>create_web_app()</code> へ向かう経路は、ありません。</p>
+<p><code>--undirected</code> を付けるか、始点と終点を逆にすれば、経路が見つかるはずです。ここは、出力のメッセージに従っただけで、付け直しての実行は試していません。</p>
+<p><strong>SQL ファイルが解析されなかった</strong></p>
+<p>SQL ファイル2つは、グラフに入りませんでした。SQL を解析するパッケージ（<code>tree_sitter_sql</code>）が入っていない、という警告が出ました。ほかに、シンボルがゼロだったファイルが6つあります。</p>
+<h2>💻 実際に解析してみる</h2>
+<p><strong>結果を見る</strong></p>
+<p>対象は194ファイルで、解析は API を使わずに終わりました。</p>
+<ul><li>ノード：3,904、エッジ：8,376、コミュニティ：215</li><li>エッジの91%は、コードから直接読み取ったもの（EXTRACTED）</li><li>残りの9%（756本）は推論したもの（INFERRED）。平均の確信度は0.92</li><li>出力：<code>GRAPH_REPORT.md</code>、<code>graph.html</code>、<code>graph.json</code>、Obsidian 用の4,119ノートと <code>graph.canvas</code></li></ul>
+<p><code>graph.html</code> は、PC の既定のブラウザで開きました。アプリ内のブラウザでは、ローカルのファイルを開けませんでした。</p>
+<p><strong>神ノードを見る</strong></p>
+<p><code>GRAPH_REPORT.md</code> の神ノードの上位5つです。</p>
+<ol><li><code>Settings</code>（117エッジ）：設定クラス</li><li><code>未決事項</code>（91）：設計書の項目</li><li><code>standard()</code>（77）</li><li><code>create_web_app()</code>（74）</li><li><code>page()</code>（71）</li></ol>
+<p>設定を持つ <code>Settings</code> が1位でした。自分でも「いろんな所から参照されている」と思っていた場所なので、納得です。</p>
+<p>2位の <code>未決事項</code> は、コードではなく設計書の見出しです。<code>docs/</code> の Markdown も、見出しなどの構造がノードに入っていました。コードの核を探すときには、ノイズになります。</p>
+<p>「意外なつながり」の欄では、設計書の見出しと、対応するコードがつながっていました。たとえば、設計書の「新しい設定値（<code>Settings</code> に足す）」の節が、コードの <code>Settings</code> につながっています。</p>
+<p><strong>Settings を変えたら何に影響するか</strong></p>
+<p>次のコマンドで、<code>Settings</code> の影響範囲を調べました。</p>
+<pre><code>graphify explain "Settings"</code></pre>
+<p>grep も、ソースの読み込みもしていません。出力は117本の接続で、ファイルごとにまとめると、こうなりました。</p>
+<ul><li>本体コード：<code>web.py</code>（<code>create_web_app()</code>）、<code>worker.py</code>（<code>Worker</code>）、<code>bootstrap.py</code>、<code>db.py</code>、<code>static_updater.py</code>、<code>testing.py</code></li><li>テスト：10ファイル前後。設定の既定値を直接調べるテストは、最初に確認したい</li><li>ドキュメント：設計書の <code>regions.md</code></li></ul>
+<p>この調査は、Claude Code に頼んだのではなく、私が <code>graphify</code> のコマンドを直接実行したものです。「Claude Code が grep に戻らずに、グラフを使うか」は、まだ確かめていません。</p>
+<p>推論（INFERRED）の辺は、確信度が0.95でも推測です。実際にコードを変えるときは、ソースで確かめます。</p>
+<h2>📝 まとめ</h2>
+<ul><li><code>uv tool install graphifyy</code> で入り、コマンド名は <code>graphify</code>（y が 1 つ）です</li><li><code>graphify install</code> は、グローバルの <code>CLAUDE.md</code> に3行を足します。入れたあとに中身を見ておくと安心です</li><li><code>graphify update .</code> は、API を使わずに、194ファイルを解析して3,904ノードのグラフを作りました</li><li>神ノードの1位は <code>Settings</code> で、<code>graphify explain</code> だけで影響範囲を洗い出せました</li><li>経路の検索は、辺の向きに注意が必要です。「経路なし」と出たら、<code>--undirected</code> を疑います</li></ul>
+<p>👉 次回は、Claude Code に影響調査を頼んで、grep に戻らないかを確かめます。</p>
+<p>※ 2026年11月時点、Windows 11 で確認しました。Graphify は 0.9.101 です。解析に使ったアプリは自作のものです。Obsidian での表示と、<code>graphify hook install</code> は、まだ試していません。</p>
